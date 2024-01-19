@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#schedule {
+    border: 1px solid black;
+    border-right: none;
+    border-bottom: none;
+    border-collapse: collapse;
+    width: 100%;
+    min-height: calc(100vh);
+}
+
+#schedule thead th {
+    border: 1px solid black;
+}
+
+.day {
+    padding: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: start;
+    vertical-align: top;
+    font-size: large;
+}
+
+.day:hover {
+    cursor: pointer;
+    background-color: rgb(219, 219, 219);
+}
