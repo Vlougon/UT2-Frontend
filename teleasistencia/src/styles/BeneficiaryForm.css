@@ -1,0 +1,29 @@
+fieldset {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    text-align: start;
+    border: 3px solid #EB6300 !important;
+    border-radius: 7px;
+}
+
+legend {
+    float: none !important;
+    width: initial !important;
+    padding: 0 10px !important;
+    color: #EB6300;
+    font-weight: bold;
+}
+
+input, select, span {
+    border: 1px solid black !important;
+}
+
+.btn-orange {
+    background-color: #ffa667 !important;
+    color: black !important;
+}
+
+.btn-orange:hover {
+    background-color: #ff6a00 !important;
+}
