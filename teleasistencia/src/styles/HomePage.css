@@ -1,0 +1,37 @@
+
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.columna {
+    width: 33%;
+    /* El ancho de la primera columna */
+}
+
+.boton {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #000;
+    /* Borde cuadrado */
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.3);
+    /* Sombra azul */
+}
+
+.columna.grande {
+    width: 66%;
+    /* El ancho de la segunda columna */
+}
+
+.boton.grande {
+    width: 100%;
+    padding: 20px;
+    /* Botones más grandes */
+    margin-bottom: 20px;
+    border: 2px solid #000;
+    /* Borde cuadrado */
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.3);
+    /* Sombra azul */
+}
