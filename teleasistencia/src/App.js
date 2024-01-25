@@ -3,6 +3,7 @@ import BeneficiaryForm from './components/BeneficiaryForm';
 import HeadFoot from './layouts/HeadFoot';
 import { Route, Routes } from "react-router-dom";
 import './App.css';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route element={<HeadFoot />} path='/'>
           <Route element={<BeneficiaryForm />} path='/'></Route>
+          <Route element={<HomePage />} path='/'></Route>
         </Route>
       </Routes>
     </div>
