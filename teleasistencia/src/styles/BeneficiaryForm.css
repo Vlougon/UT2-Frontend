@@ -1,10 +1,10 @@
 fieldset {
-    border: 1px groove #ddd !important;
-    padding: 0 1.4em 1.4em 1.4em !important;
     margin: 0 0 1.5em 0 !important;
-    text-align: start;
+    padding: 0 1.4em 1.4em 1.4em !important;
     border: 3px solid #EB6300 !important;
     border-radius: 7px;
+    text-align: start;
+    box-shadow: 1px 3px 7px 3px rgba(0, 0, 0, .3);
 }
 
 legend {
@@ -15,7 +15,9 @@ legend {
     font-weight: bold;
 }
 
-input, select, span {
+input,
+select,
+span {
     border: 1px solid black !important;
 }
 
@@ -30,4 +32,10 @@ label {
 
 .btn-orange:hover {
     background-color: #ff6a00 !important;
+}
+
+@media (max-width: 768px) {
+    fieldset {
+        text-align: center;
+    }
 }

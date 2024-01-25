@@ -1,6 +1,21 @@
 import '../styles/BeneficiaryForm.css';
 
 export default function BeneficiaryForm() {
+
+    const dniGenerator = () => {
+
+    };
+
+    const ssGenerator = () => {
+
+    };
+
+    const cpGenerator = () => {
+
+    };
+
+    console.log(dniGenerator, ssGenerator, cpGenerator);
+
     return (
         <div className='container-fluid'>
             <form action="#" method="post">
