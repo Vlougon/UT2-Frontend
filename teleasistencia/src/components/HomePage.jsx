@@ -10,7 +10,7 @@ const HomePage = () => {
                     <button key={i} className="boton">
                         <a href="tu-enlace-aqui" target="_blank" rel="noopener noreferrer">
                             <img
-                                src="ruta-de-tu-imagen.jpg"
+                                src="../images/heart.png"
                                 alt={`Imagen del botón ${i}`}
                                 className="imagen-boton"
                             />
@@ -22,11 +22,17 @@ const HomePage = () => {
             </div>
 
             {/* Segunda columna con 4 botones más grandes */}
-            <div className="columna grande" style={{ width: '66%' }}>
+            <div className="columna grande">
                 {[9, 10, 11, 12].map((i) => (
                     <button key={i} className="boton grande">
-                        {/* Puedes agregar aquí la imagen y enlace */}
-                        Botón Grande {i}
+                        <a href="tu-enlace-aqui" target="_blank" rel="noopener noreferrer">
+                            <img
+                                src="../images/phone.png"
+                                alt={`Imagen del botón ${i}`}
+                                className="imagen-boton"
+                            />
+                            Botón Grande {i}
+                        </a>
                     </button>
                 ))}
             </div>
