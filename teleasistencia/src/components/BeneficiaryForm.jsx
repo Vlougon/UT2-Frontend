@@ -2,7 +2,7 @@ import '../styles/BeneficiaryForm.css';
 
 export default function BeneficiaryForm() {
     return (
-        <div>
+        <div className='container-fluid'>
             <form action="#" method="post">
                 <fieldset>
                     <legend>Datos Personales</legend>
