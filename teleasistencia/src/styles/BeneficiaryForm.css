@@ -19,6 +19,10 @@ input, select, span {
     border: 1px solid black !important;
 }
 
+label {
+    margin-bottom: 3px !important;
+}
+
 .btn-orange {
     background-color: #ffa667 !important;
     color: black !important;
