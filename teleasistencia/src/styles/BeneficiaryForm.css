@@ -21,6 +21,12 @@ span {
     border: 1px solid black !important;
 }
 
+input[type=submit] {
+    background-color: #EB6300;
+    padding: 5px;
+    border-radius: 10px;
+}
+
 label {
     margin-bottom: 3px !important;
 }
