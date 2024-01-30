@@ -41,7 +41,7 @@ label {
 }
 
 @media (max-width: 768px) {
-    fieldset {
+    fieldset > legend {
         text-align: center;
     }
 }

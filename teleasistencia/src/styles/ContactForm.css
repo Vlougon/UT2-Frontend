@@ -1,0 +1,9 @@
+#contactForm {
+    min-height: calc(100vh - 92px - 171px);
+}
+
+@media (max-width: 768px) {
+    fieldset>legend {
+        text-align: center;
+    }
+}
