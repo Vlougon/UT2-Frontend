@@ -18,7 +18,7 @@ export default function BeneficiaryForm() {
     console.log(dniGenerator, ssGenerator, cpGenerator);
 
     return (
-        <div className='container-fluid'>
+        <div id='beneficiaryForm' className='container-fluid'>
             <form action="#" method="post">
                 <fieldset>
                     <legend>Datos Personales</legend>

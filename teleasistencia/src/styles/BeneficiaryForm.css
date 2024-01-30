@@ -31,6 +31,10 @@ label {
     margin-bottom: 3px !important;
 }
 
+#beneficiaryForm {
+    min-height: calc(100vh - 92px - 171px);
+}
+
 .btn-orange {
     background-color: #ffa667 !important;
     color: black !important;
@@ -41,7 +45,7 @@ label {
 }
 
 @media (max-width: 768px) {
-    fieldset > legend {
+    fieldset>legend {
         text-align: center;
     }
 }
