@@ -5,6 +5,7 @@ import MedicalDataForm from "./components/MedicalDataForm";
 import ContactForm from "./components/ContactForm";
 import HeadFoot from './layouts/HeadFoot';
 import HomePage from './components/HomePage';
+import BeneficiaryList from "./components/BeneficiaryList";
 import './App.css';
 
 function App() {
@@ -14,8 +15,9 @@ function App() {
         <Route element={<HeadFoot />} path='/'>
           <Route element={<HomePage />} path='/'></Route>
           <Route element={<BeneficiaryForm />} path='/beneficiaryform'></Route>
-          <Route element={<MedicalDataForm />} path='/medicaldataform'></Route>
-          <Route element={<ContactForm />} path='/contactform'></Route>
+          <Route element={<MedicalDataForm />} path='/medicaldataform/:id'></Route>
+          <Route element={<ContactForm />} path='/contactform/:id'></Route>
+          <Route element={<BeneficiaryList />} path='/beneficiarylist'></Route>
         </Route>
       </Routes>
     </div>

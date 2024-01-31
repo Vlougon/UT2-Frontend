@@ -1,0 +1,29 @@
+#beneficiaryList {
+    min-height: calc(100vh - 92px - 171px);
+}
+
+#beneficiaryList table#beneficiaryTable {
+    border-top-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
+    overflow: hidden;
+}
+
+#beneficiaryList table td,
+#beneficiaryList table th {
+    vertical-align: middle;
+    /* border: 1px solid #e05d00 !important; */
+}
+
+#beneficiaryList th {
+    background-color: #e05d00 !important;
+    color: white;
+}
+
+#beneficiaryList .btn-outline-danger {
+    width: 80%;
+}
+
+#beneficiaryList .btn-warning,
+#beneficiaryList .btn-info {
+    width: 60%;
+}

@@ -204,6 +204,8 @@ export default function MedicalDataForm() {
                         </div>
                     </div>
                 </fieldset>
+
+                <input type="submit" value="Asignar Datos Médicos" />
             </form>
         </div>
     )
