@@ -1,3 +1,4 @@
+// import { useParams, Link } from 'react-router-dom';
 import '../styles/MedicalDataForm.css';
 
 export default function MedicalDataForm() {
