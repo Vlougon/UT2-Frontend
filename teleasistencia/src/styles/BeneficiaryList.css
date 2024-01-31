@@ -19,11 +19,13 @@
     color: white;
 }
 
+#beneficiaryList .btn-info,
+#beneficiaryList .btn-warning,
 #beneficiaryList .btn-outline-danger {
     width: 80%;
 }
 
-#beneficiaryList .btn-warning,
-#beneficiaryList .btn-info {
+
+#beneficiaryList .btn-success {
     width: 60%;
 }
