@@ -10,6 +10,7 @@ import CallForm from "./components/CallForm";
 import BeneficiaryList from "./components/BeneficiaryList";
 import MedicalDataList from "./components/MedicalDataList";
 import ContactList from "./components/ContactList";
+import AssistantList from "./components/AssistantList";
 import NotFound from "./components/NotFound";
 import './App.css';
 
@@ -26,6 +27,7 @@ function App() {
           <Route element={<ContactForm />} path='/contactform/:id'></Route>
           <Route element={<BeneficiaryList />} path='/beneficiarylist'></Route>
           <Route element={<MedicalDataList />} path='/medicaldatalist'></Route>
+          <Route element={<AssistantList />} path='/assistantlist'></Route>
           <Route element={<ContactList />} path='/contactlist/:id?'></Route>
           <Route element={<NotFound />} path='*'></Route>
         </Route>

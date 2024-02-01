@@ -1,37 +1,40 @@
-#contactList {
+#assistantList {
     min-height: calc(100vh - 92px - 171px);
 }
 
-#contactList table#contactTable {
+#assistantList table#assistantTable {
     border-top-right-radius: 15px !important;
     border-top-left-radius: 15px !important;
     overflow: hidden;
 }
 
-#contactList table td,
-#contactList table th {
+#assistantList table td,
+#assistantList table th {
     vertical-align: middle;
     border-bottom: 1px solid #888888;
 }
 
-#contactList table thead {
+#assistantList table thead {
     border-left: 1px solid #e05d00;
 }
 
-#contactList table tbody {
+#assistantList table tbody {
     border-left: 1px solid #888888;
     border-right: 1px solid #888888;
 }
 
-#contactList th {
+#assistantList th {
     background-color: #e05d00 !important;
     color: white;
 }
 
-#contactList .btn-outline-danger {
+#assistantList .btn-info,
+#assistantList .btn-warning,
+#assistantList .btn-outline-danger {
     width: 80%;
 }
 
-#contactList .btn-warning {
+
+#assistantList .btn-success {
     width: 60%;
 }
