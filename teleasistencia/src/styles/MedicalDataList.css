@@ -1,40 +1,37 @@
-#beneficiaryList {
+#medicalList {
     min-height: calc(100vh - 92px - 171px);
 }
 
-#beneficiaryList table#beneficiaryTable {
+#medicalList table#medicalTable {
     border-top-right-radius: 15px !important;
     border-top-left-radius: 15px !important;
     overflow: hidden;
 }
 
-#beneficiaryList table td,
-#beneficiaryList table th {
+#medicalList table td,
+#medicalList table th {
     vertical-align: middle;
     border-bottom: 1px solid #888888;
 }
 
-#beneficiaryList table thead {
+#medicalList table thead {
     border-left: 1px solid #e05d00;
 }
 
-#beneficiaryList table tbody {
+#medicalList table tbody {
     border-left: 1px solid #888888;
     border-right: 1px solid #888888;
 }
 
-#beneficiaryList th {
+#medicalList th {
     background-color: #e05d00 !important;
     color: white;
 }
 
-#beneficiaryList .btn-info,
-#beneficiaryList .btn-warning,
-#beneficiaryList .btn-outline-danger {
-    width: 80%;
+#medicalList .btn-outline-danger {
+    width: 90%;
 }
 
-
-#beneficiaryList .btn-success {
-    width: 60%;
+#medicalList .btn-success {
+    width: 50%;
 }

@@ -5,9 +5,11 @@ import MedicalDataForm from "./components/MedicalDataForm";
 import ContactForm from "./components/ContactForm";
 import HeadFoot from './layouts/HeadFoot';
 import HomePage from './components/HomePage';
-import BeneficiaryList from "./components/BeneficiaryList";
 import AssistantForm from "./components/AssistantForm";
 import CallForm from "./components/CallForm";
+import BeneficiaryList from "./components/BeneficiaryList";
+import MedicalDataList from "./components/MedicalDataList";
+import ContactList from "./components/ContactList";
 import NotFound from "./components/NotFound";
 import './App.css';
 
@@ -23,6 +25,8 @@ function App() {
           <Route element={<MedicalDataForm />} path='/medicaldataform/:id'></Route>
           <Route element={<ContactForm />} path='/contactform/:id'></Route>
           <Route element={<BeneficiaryList />} path='/beneficiarylist'></Route>
+          <Route element={<MedicalDataList />} path='/medicaldatalist'></Route>
+          <Route element={<ContactList />} path='/contactlist/:id?'></Route>
           <Route element={<NotFound />} path='*'></Route>
         </Route>
       </Routes>
