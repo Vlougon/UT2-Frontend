@@ -1,4 +1,4 @@
-import AddresFieldSet from './AddresFieldSet';
+import AddresFieldSet from '../components/AddresFieldSet';
 import '../styles/BeneficiaryForm.css';
 
 export default function BeneficiaryForm() {

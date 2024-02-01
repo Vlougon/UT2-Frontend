@@ -1,5 +1,5 @@
 // import { useParams, Link } from 'react-router-dom';
-import AddresFieldSet from "./AddresFieldSet";
+import AddresFieldSet from "../components/AddresFieldSet";
 import '../styles/ContactForm.css';
 
 export default function ContactForm() {
