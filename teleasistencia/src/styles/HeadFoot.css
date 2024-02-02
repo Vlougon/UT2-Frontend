@@ -1,6 +1,5 @@
 header {
     background-color: #0012b4;
-    margin-bottom: 30px;
     padding: 10px;
 }
 
@@ -15,7 +14,6 @@ nav a img {
 
 footer {
     background-color: black;
-    margin-top: 15px;
     padding: 5px;
     color: white;
 }
