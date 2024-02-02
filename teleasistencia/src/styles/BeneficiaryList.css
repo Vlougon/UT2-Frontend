@@ -1,5 +1,7 @@
 #beneficiaryList {
     min-height: calc(100vh - 92px - 171px);
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 #beneficiaryList table#beneficiaryTable {
