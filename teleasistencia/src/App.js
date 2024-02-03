@@ -11,6 +11,7 @@ import BeneficiaryList from "./pages/BeneficiaryList";
 import MedicalDataList from "./pages/MedicalDataList";
 import ContactList from "./pages/ContactList";
 import AssistantList from "./pages/AssistantList";
+import Calendar from "./pages/Calendar";
 import DocumentGenerator from "./pages/DocumentGenerator";
 import NotFound from "./pages/NotFound";
 import './App.css';
@@ -30,6 +31,7 @@ function App() {
           <Route element={<MedicalDataList />} path='/medicaldatalist'></Route>
           <Route element={<AssistantList />} path='/assistantlist'></Route>
           <Route element={<ContactList />} path='/contactlist/:id?'></Route>
+          <Route element={<Calendar />} path='/calendar'></Route>
           <Route element={<DocumentGenerator />} path='/documentgenerator'></Route>
           <Route element={<NotFound />} path='*'></Route>
         </Route>
