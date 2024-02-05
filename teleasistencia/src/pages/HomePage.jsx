@@ -1,42 +1,49 @@
 import React, { useState } from 'react';
+import BigShortCut from '../components/BigShortCut';
+import ShortCut from '../components/ShortCut';
 import '../styles/HomePage.css';
 
-const HomePage = () => {
+let shortCutsID = 1;
+
+export default function HomePage() {
     const [shortCuts, setShortCuts] = useState([]);
 
-    const handleShortCutInsert = () => {
+    const handleShortCutInsert = (element) => {
+        const target = element.target;
 
+        if (shortCuts.length >= 7 || shortCuts.some(shortCut => shortCut.text === target.alt)) {
+            return
+        }
+
+        setShortCuts([
+            ...shortCuts,
+            {
+                id: shortCutsID,
+                link: target.getAttribute('prefix'),
+                text: target.alt,
+                source: target.src,
+            }
+        ])
+
+        shortCutsID++;
     };
 
     const handleShortCutDelete = (element) => {
-        element.target.parentElement.remove();
+        const toDeleteID = parseInt(element.target.parentElement.id);
+        setShortCuts(shortCuts.filter(shortcut => shortcut.id !== toDeleteID));
     };
 
     return (
         <div id='homePage' className="container-fluid">
             <div className='row'>
                 <aside className="col-md-3 column">
-                    <div className='row'>
-                        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                            <div key={i} className="d-flex justify-content-evenly columrow">
-                                <a href="/">
-                                    <img
-                                        src="../images/heart.png"
-                                        alt={`Imagen del botón ${i}`}
-                                        className="img-fluid"
-                                        width={40}
-                                        height={40}
-                                    />
-                                    <p>
-                                        Botón {i}
-                                    </p>
-                                </a>
-                                <button onClick={handleShortCutDelete}>
-                                    -
-                                </button>
-                            </div>
-                        ))}
-                    </div>
+                    <ul className='row'>
+                        {
+                            shortCuts.map((shortcut) => {
+                                return <ShortCut key={shortcut.id} linkID={shortcut.id} hrefLink={shortcut.link} textLink={shortcut.text} imageSource={shortcut.source} deleteFunction={handleShortCutDelete} />
+                            })
+                        }
+                    </ul>
 
                     <div className='row justify-content-center align-items-end addSection'>
                         <button id='addButton' type="button" data-bs-toggle="modal" data-bs-target="#shortCutModal">
@@ -50,8 +57,15 @@ const HomePage = () => {
                                         <h1 className="modal-title fs-5" id="shortCutModalLabel">Atajos ({shortCuts.length}/7)</h1>
                                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div className="modal-body">
-                                        ...
+                                    <div className="row modal-body row-cols-3 justify-content-center">
+                                        <img src="../images/addAssistantIcon.png" alt="Añadir Trabajador" title='Añadir Trabajador' prefix='/assistantform' onClick={handleShortCutInsert} />
+                                        <img src="../images/assistantIcon.png" alt="Asistentes" title='Listado de Asistentes' prefix='/assistantlist' onClick={handleShortCutInsert} />
+
+                                        <img src="../images/addBeneficiaryIcon.png" alt="Añadir Beneficiario" title='Añadir Beneficiario' prefix='/beneficiaryform' onClick={handleShortCutInsert} />
+                                        <img src="../images/medicalDataIcon.png" alt="Datos Médicos" title='Datos Médicos' prefix='/medicaldatalist' onClick={handleShortCutInsert} />
+                                        <img src="../images/contactsIcon.png" alt="Contactos" title='Contactos' prefix='/contactlist' onClick={handleShortCutInsert} />
+                                        <img src="../images/calendarIcon.png" alt="Calendario" title='Calendario' prefix='/calendar' onClick={handleShortCutInsert} />
+                                        <img src="../images/unknownCallIcon.png" alt="Llamada Aleatoria" title='Llamada Aleatoria' prefix='/callform' onClick={handleShortCutInsert} />
                                     </div>
                                     <div className="modal-footer justify-content-center">
                                         <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
@@ -64,24 +78,13 @@ const HomePage = () => {
 
                 <div className="col-md-9 main">
                     <div className='row gap-4 justify-content-center align-items-center'>
-                        {[9, 10, 11, 12].map((i) => (
-                            <button key={i} className="col-8 col-sm-5 mainButton">
-                                <a href="tu-enlace-aqui" target="_blank" rel="noopener noreferrer">
-                                    <img
-                                        src="../images/phone.png"
-                                        alt={`Imagen del botón ${i}`}
-                                        className="img-fluid"
-                                        width={300}
-                                        height={300}
-                                    />
-                                </a>
-                            </button>
-                        ))}
+                        <BigShortCut key={1} hrefLink={'/beneficiarylist/incoming'} imageSource={'../images/incomingCallBigIcon.png'} imageAlt={'Llamada Entrante'} />
+                        <BigShortCut key={2} hrefLink={'/beneficiarylist/outcoming'} imageSource={'../images/outgoingCallBigIcon.png'} imageAlt={'Llamada Saliente'} />
+                        <BigShortCut key={3} hrefLink={'/beneficiarylist'} imageSource={'../images/userDocumentsBigIcon.png'} imageAlt={'Gestión de Beneficiarios'} />
+                        <BigShortCut key={4} hrefLink={'/documentgenerator'} imageSource={'../images/pdfDownloadBigIcon.png'} imageAlt={'Generador de Documentos'} />
                     </div>
                 </div>
             </div>
         </div>
     );
 };
-
-export default HomePage;
