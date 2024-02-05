@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/HomePage.css';
 
 const HomePage = () => {
+    const [shortCuts, setShortCuts] = useState([]);
+
+    const handleShortCutInsert = () => {
+
+    };
+
+    const handleShortCutDelete = (element) => {
+        element.target.parentElement.remove();
+    };
+
     return (
         <div id='homePage' className="container-fluid">
             <div className='row'>
@@ -21,11 +31,34 @@ const HomePage = () => {
                                         Botón {i}
                                     </p>
                                 </a>
-                                <button>
+                                <button onClick={handleShortCutDelete}>
                                     -
                                 </button>
                             </div>
                         ))}
+                    </div>
+
+                    <div className='row justify-content-center align-items-end addSection'>
+                        <button id='addButton' type="button" data-bs-toggle="modal" data-bs-target="#shortCutModal">
+                            +
+                        </button>
+
+                        <div className="modal fade" id="shortCutModal" tabIndex="-1" aria-labelledby="shortCutModalLabel" aria-hidden="true">
+                            <div className="modal-dialog">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h1 className="modal-title fs-5" id="shortCutModalLabel">Atajos ({shortCuts.length}/7)</h1>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        ...
+                                    </div>
+                                    <div className="modal-footer justify-content-center">
+                                        <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </aside>
 

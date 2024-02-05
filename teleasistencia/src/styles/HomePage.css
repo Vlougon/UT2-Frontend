@@ -18,6 +18,11 @@
     border-bottom: 1px solid black;
 }
 
+#homePage aside.column .addSection {
+    height: 10%;
+    padding: 10px;
+}
+
 #homePage aside.column .columrow a {
     color: white;
     text-decoration: none;
@@ -46,7 +51,18 @@
     border: 2px solid black;
 }
 
-#homePage aside.column .columrow button:hover {
+#homePage aside.column #addButton {
+    background: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-size: xx-large;
+    text-align: center;
+}
+
+#homePage aside.column .columrow button:hover,
+#homePage aside.column #addButton:hover {
     background-color: #727272;
 }
 
@@ -57,4 +73,11 @@
 
 #homePage .main button {
     border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    #homePage aside.column {
+        border-right: none;
+        border-bottom: 3px solid black;
+    }
 }
