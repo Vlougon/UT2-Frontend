@@ -28,6 +28,24 @@
     resize: none !important;
 }
 
+#medicalForm textarea.is-invalid,
+#medicalForm span.is-invalid,
+#medicalForm input.is-invalid {
+    border: 1px solid red !important;
+}
+
+#medicalForm span.is-invalid {
+    background-color: rgb(255, 181, 181);
+}
+
+#medicalForm form fieldset div.requiredRadio {
+    color: red !important;
+}
+
+#medicalForm div.invalid-feedback p {
+    margin-bottom: 0 !important;
+}
+
 #medicalForm input[type=submit] {
     background-color: #EB6300;
     padding: 5px;
