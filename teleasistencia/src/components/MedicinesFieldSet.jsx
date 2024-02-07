@@ -55,7 +55,7 @@ export default function MedicinesFieldSet({ medMorn, medNoon, medNight, hourMorn
                         </span>
                         <input type="time" id="preferent_morning_calls_hour" name="preferent_morning_calls_hour" value={hourMorn} className='form-control' onChange={handler} onClick={handleHourInput} required />
                         <div className="invalid-feedback">
-                            ¡Introduza una Hora adecuada para la Mañana!
+                            ¡Introduza una Hora adecuada para la Mañana (06:00 - 13-59)!
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ export default function MedicinesFieldSet({ medMorn, medNoon, medNight, hourMorn
                         </span>
                         <input type="time" id="preferent_afternoon_calls_hour" name="preferent_afternoon_calls_hour" value={hourNoon} className='form-control' onChange={handler} onClick={handleHourInput} required />
                         <div className="invalid-feedback">
-                            ¡Introduza una Hora adecuada para la Tarde!
+                            ¡Introduza una Hora adecuada para la Tarde (14:00 - 21-59)!
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@ export default function MedicinesFieldSet({ medMorn, medNoon, medNight, hourMorn
                         </span>
                         <input type="time" id="preferent_night_calls_hour" name="preferent_night_calls_hour" value={HourNight} className='form-control' onChange={handler} onClick={handleHourInput} required />
                         <div className="invalid-feedback">
-                            ¡Introduza una Hora adecuada para la Noche!
+                            ¡Introduza una Hora adecuada para la Noche (22:00 - 05-59)!
                         </div>
                     </div>
                 </div>

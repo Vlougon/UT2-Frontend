@@ -50,6 +50,12 @@
     background-color: #EB6300;
     padding: 5px;
     border-radius: 10px;
+    font-weight: bold;
+}
+
+#medicalForm input[type=submit]:hover {
+    background-color: #ff852f;
+    box-shadow: 0 0 10px 3px rgba(235, 99, 0, .6);
 }
 
 @media (max-width: 768px) {
