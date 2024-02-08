@@ -15,6 +15,7 @@ export default function SocialDataFieldSet() {
                         ]
                     }
                     formUsed={'beneficiary'}
+                    boxLength={'col-md-4'}
                     needFeedBack={true}
                 />
 
@@ -28,6 +29,7 @@ export default function SocialDataFieldSet() {
                         ]
                     }
                     formUsed={'beneficiary'}
+                    boxLength={'col-md-4'}
                     needFeedBack={true}
                 />
 
@@ -41,6 +43,7 @@ export default function SocialDataFieldSet() {
                         ]
                     }
                     formUsed={'beneficiary'}
+                    boxLength={'col-md-4'}
                     needFeedBack={true}
                 />
             </div>

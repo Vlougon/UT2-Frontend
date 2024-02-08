@@ -39,7 +39,10 @@ export default function BeneficiaryForm() {
     };
 
     const handleAddressChange = (element) => {
-
+        setBeneficiaryAddressData({
+            ...beneficiaryAddressData,
+            [element.target.name]: element.target.value,
+        });
     };
 
 

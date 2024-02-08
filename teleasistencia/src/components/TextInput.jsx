@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { BeneficiaryFormContext } from "../pages/BeneficiaryForm";
 
-export default function TextInput({ nameID, sublimText, formUsed, needFeedback = false }) {
+export default function TextInput({ nameID, sublimText, formUsed, boxLength, needFeedback = false }) {
     const { beneficiaryData } = useContext(BeneficiaryFormContext);
+    const { beneficiaryAddressData } = useContext(BeneficiaryFormContext);
     const { handlePersonalDataChange } = useContext(BeneficiaryFormContext);
+    const { handleAddressChange } = useContext(BeneficiaryFormContext);
 
     const FeedBackRender = () => {
         let feedBackMessage = '';
@@ -31,7 +33,7 @@ export default function TextInput({ nameID, sublimText, formUsed, needFeedback =
     };
 
     return (
-        <div className='col-md-4'>
+        <div className={boxLength}>
             <label htmlFor={nameID} className="form-label">{sublimText}:</label>
             <div className={needFeedback ? 'input-group has-validation' : 'input-group'}>
                 <span className='input-group-text' id={formUsed + nameID}>
@@ -39,7 +41,7 @@ export default function TextInput({ nameID, sublimText, formUsed, needFeedback =
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                     </svg>
                 </span>
-                <input type="text" id={nameID} name={nameID} value={beneficiaryData[nameID]} className='form-control' placeholder={sublimText} aria-describedby={formUsed + nameID} autoComplete="off" onChange={handlePersonalDataChange} />
+                <input type="text" id={nameID} name={nameID} value={formUsed === 'address' ? beneficiaryAddressData[nameID] : beneficiaryData[nameID]} className='form-control' placeholder={sublimText} aria-describedby={formUsed + nameID} autoComplete="off" onChange={formUsed === 'address' ? handleAddressChange : handlePersonalDataChange} />
 
                 <FeedBackRender />
             </div>

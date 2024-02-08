@@ -33,11 +33,11 @@ export default function BeneficiaryPersonalDataFieldSet() {
             <legend>Datos Personales</legend>
             <div className='row g-3'>
 
-                <TextInput nameID={'name'} sublimText={'Nombre'} formUsed={'beneficiary'} needFeedback={true} />
+                <TextInput nameID={'name'} sublimText={'Nombre'} formUsed={'beneficiary'} boxLength={'col-md-4'} needFeedback={true} />
 
-                <TextInput nameID={'first_surname'} sublimText={'Primer Apellido'} formUsed={'beneficiary'} needFeedback={true} />
+                <TextInput nameID={'first_surname'} sublimText={'Primer Apellido'} formUsed={'beneficiary'} boxLength={'col-md-4'} needFeedback={true} />
 
-                <TextInput nameID={'second_surname'} sublimText={'Segundo Apellido'} formUsed={'beneficiary'} />
+                <TextInput nameID={'second_surname'} sublimText={'Segundo Apellido'} formUsed={'beneficiary'} boxLength={'col-md-4'} />
 
                 <div className='col-md-4'>
                     <label htmlFor="dni" className="form-label">DNI:</label>
