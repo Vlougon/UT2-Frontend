@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { BeneficiaryFormContext } from '../pages/BeneficiaryForm';
 import PhoneNumberInput from './PhoneNumberInput';
-import NamesInput from './NamesInput';
+import TextInput from './TextInput';
 import DNIGenerator from '../classes/DNIGenerator';
 import SSNGenerator from '../classes/SSNGenerator';
 
@@ -33,11 +33,11 @@ export default function BeneficiaryPersonalDataFieldSet() {
             <legend>Datos Personales</legend>
             <div className='row g-3'>
 
-                <NamesInput nameID={'name'} sublimText={'Nombre'} needFeedback={true} />
+                <TextInput nameID={'name'} sublimText={'Nombre'} formUsed={'beneficiary'} needFeedback={true} />
 
-                <NamesInput nameID={'first_surname'} sublimText={'Primer Apellido'} needFeedback={true} />
+                <TextInput nameID={'first_surname'} sublimText={'Primer Apellido'} formUsed={'beneficiary'} needFeedback={true} />
 
-                <NamesInput nameID={'second_surname'} sublimText={'Segundo Apellido'} />
+                <TextInput nameID={'second_surname'} sublimText={'Segundo Apellido'} formUsed={'beneficiary'} />
 
                 <div className='col-md-4'>
                     <label htmlFor="dni" className="form-label">DNI:</label>

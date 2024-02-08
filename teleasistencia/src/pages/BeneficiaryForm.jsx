@@ -62,12 +62,9 @@ export default function BeneficiaryForm() {
                 <BeneficiaryFormContext.Provider
                     value={
                         {
-                            beneficiaryData,
-                            setBeneficiaryData,
-                            beneficiaryAddressData,
-                            setBeneficiaryAddressData,
-                            beneficiaryPhones,
-                            setBeneficiaryPhones,
+                            beneficiaryData, setBeneficiaryData,
+                            beneficiaryAddressData, setBeneficiaryAddressData,
+                            beneficiaryPhones, setBeneficiaryPhones,
                             handlePersonalDataChange,
                             handleAddressChange,
                             handlePhonesChange
