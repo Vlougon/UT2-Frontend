@@ -209,10 +209,18 @@ export default class PCGenerator {
             province: 'Melilla',
             postal_code: '52',
         },
-    ]
+    ];
+
     static generatePC(prefix) {
         const fullPostalCode = prefix + Math.floor(Math.random() * 1000).toString().padStart(3, '0');
 
         return fullPostalCode;
+    }
+
+    static validPC(postalCode, provinceName) {
+        const prefixes = postalCode.slice(0, 2);
+        const fullProvince = this.provincesPostalCodes.filter((province) => province.province === provinceName)[0];
+
+        return prefixes === fullProvince.postal_code ? true : false;
     }
 }

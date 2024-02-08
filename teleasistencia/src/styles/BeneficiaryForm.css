@@ -29,16 +29,34 @@
     resize: none !important;
 }
 
+#beneficiaryForm textarea.is-invalid,
+#beneficiaryForm select.is-invalid,
+#beneficiaryForm span.is-invalid,
+#beneficiaryForm input.is-invalid {
+    border: 1px solid red !important;
+}
+
+#beneficiaryForm span.is-invalid {
+    background-color: rgb(255, 181, 181);
+}
+
+#beneficiaryForm form fieldset div.requiredRadio {
+    color: red !important;
+}
+
+#beneficiaryForm div.invalid-feedback p {
+    margin-bottom: 0 !important;
+}
+
 #beneficiaryForm input[type=submit] {
-    background-color: #EB6300;
     padding: 5px;
     border-radius: 10px;
     font-weight: bold;
 }
 
 #beneficiaryForm input[type=submit]:hover {
-    background-color: #ff852f;
-    box-shadow: 0 0 10px 3px rgba(235, 99, 0, .6);
+    background-color: #005be3;
+    box-shadow: 0 0 10px 3px rgba(13, 110, 253, .6);
 }
 
 #beneficiaryForm label {

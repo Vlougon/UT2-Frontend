@@ -94,10 +94,18 @@ export default class DNIGenerator {
         },
     ];
 
-    static generateDNI(dni) {
-        const dniNumber = dni ? dni : Math.floor(Math.random() * (79000000 - 78000000) + 78000000);
+    static generateDNI() {
+        const dniNumber = Math.floor(Math.random() * (79000000 - 78000000) + 78000000);
         const dniLetter = this.asignactionArray.find(object => object.remainder === (dniNumber % 23)).letter;
         const fullDNI = dniNumber + dniLetter;
         return fullDNI
+    }
+
+    static verifyDNI(dni) {
+        const letter = dni.slice(-1).toLowerCase();
+        const number = dni.slice(0, -1);
+        const realLetter = this.asignactionArray.find(object => object.remainder === (number % 23)).letter.toLowerCase();
+
+        return realLetter === letter ? true : false;
     }
 }

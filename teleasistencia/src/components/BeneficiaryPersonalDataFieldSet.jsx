@@ -28,6 +28,34 @@ export default function BeneficiaryPersonalDataFieldSet() {
         target.dispatchEvent(event);
     };
 
+    const handlePersonalDataInputs = (element) => {
+        if (element.target.tagName === 'svg' || element.target.tagName === 'path') {
+            return
+        }
+
+        if (element.target.tagName === 'SPAN') {
+            const target = element.target.previousElementSibling ? element.target.previousElementSibling : element.target.nextElementSibling;
+
+            target.className = 'form-control';
+            target.previousElementSibling.className = 'input-group-text';
+            target.nextElementSibling.className = 'input-group-text btn btn-orange';
+            target.nextElementSibling.nextElementSibling.className = 'invalid-feedback';
+
+            return
+        }
+
+        element.target.className = 'form-control';
+        element.target.previousElementSibling.className = 'input-group-text';
+
+        if (element.target.id === 'dni' || element.target.id === 'social_security_number') {
+            element.target.nextElementSibling.className = 'input-group-text btn btn-orange';
+            element.target.nextElementSibling.nextElementSibling.className = 'invalid-feedback';
+            return
+        }
+
+        element.target.nextElementSibling.className = 'invalid-feedback';
+    };
+
     return (
         <fieldset>
             <legend>Datos Personales</legend>
@@ -41,7 +69,7 @@ export default function BeneficiaryPersonalDataFieldSet() {
 
                 <div className='col-md-4'>
                     <label htmlFor="dni" className="form-label">DNI:</label>
-                    <div className='input-group has-validation'>
+                    <div className='input-group has-validation' onClick={handlePersonalDataInputs}>
                         <span className='input-group-text' id='beneficiaryDNI'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-fill" viewBox="0 0 16 16">
                                 <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
@@ -57,7 +85,7 @@ export default function BeneficiaryPersonalDataFieldSet() {
 
                 <div className='col-md-5'>
                     <label htmlFor="social_security_number" className="form-label">Código de la Seguridad Social:</label>
-                    <div className='input-group has-validation'>
+                    <div className='input-group has-validation' onClick={handlePersonalDataInputs}>
                         <span className='input-group-text' id='beneficiarySS'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-fill" viewBox="0 0 16 16">
                                 <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
@@ -79,12 +107,14 @@ export default function BeneficiaryPersonalDataFieldSet() {
                                 <path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z" />
                             </svg>
                         </span>
-                        <input type="date" id='birth_date' name="birth_date" value={beneficiaryData.birth_date} className='form-control' aria-describedby='beneficiaryBirthDate' onChange={handlePersonalDataChange} />
+                        <input type="date" id='birth_date' name="birth_date" value={beneficiaryData.birth_date} className='form-control' aria-describedby='beneficiaryBirthDate' onChange={handlePersonalDataChange} onClick={handlePersonalDataInputs} />
                         <div className="invalid-feedback">
                             ¡Introduza una fecha de Nacimiento Válida!
                         </div>
                     </div>
                 </div>
+
+                <PhoneNumberInput />
 
                 <div className='col-12'>
                     <label htmlFor="rutine" className="form-label">Rutina:</label>
@@ -97,8 +127,6 @@ export default function BeneficiaryPersonalDataFieldSet() {
                         <textarea id="rutine" name="rutine" value={beneficiaryData.rutine} className="form-control" placeholder="Rutina del Beneficiario" onChange={handlePersonalDataChange}></textarea>
                     </div>
                 </div>
-
-                <PhoneNumberInput />
             </div>
         </fieldset>
     )
