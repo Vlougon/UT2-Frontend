@@ -7,6 +7,7 @@ import '../styles/BeneficiaryForm.css';
 export const BeneficiaryFormContext = createContext();
 
 export default function BeneficiaryForm() {
+    //States
     const [beneficiaryData, setBeneficiaryData] = useState({
         name: '',
         first_surname: '',
@@ -63,6 +64,8 @@ export default function BeneficiaryForm() {
     return (
         <div id='beneficiaryForm' className='container-fluid'>
             <form action="#" method="post" onSubmit={handleSubmit}>
+                {/* Esta la función de contexto a la cual le podemos meter un value, el cual será accesible para 
+                cualquiera que lo importe.*/}
                 <BeneficiaryFormContext.Provider
                     value={
                         {

@@ -1,13 +1,18 @@
-import { useContext } from "react";
-import { BeneficiaryFormContext } from "../pages/BeneficiaryForm";
-import TextInput from "./TextInput";
-import SelectInput from "./SelectInput";
-import PCGenerator from "../classes/PCGenerator";
+import { useContext } from "react"; //Permite acceder al contexto de un componente
+import { BeneficiaryFormContext } from "../pages/BeneficiaryForm"; //Contexto para compartir datos entre componentes
+import 'bootstrap/dist/css/bootstrap.min.css';
+import TextInput from "./TextInput"; //Componente para crear un input de texto
+import SelectInput from "./SelectInput";// Componente para crear un select
+import PCGenerator from "../classes/PCGenerator"; //Proporciona funcionalidades para la generación de códigos postales
+
+//Definimos un formulario para un benefeciary
 
 export default function AddresFieldSet() {
+    //Obtiene datos y funciones del texto
     const { beneficiaryAddressData } = useContext(BeneficiaryFormContext);
     const { handleAddressChange } = useContext(BeneficiaryFormContext);
 
+    //Función para generar un código postal
     const pcGenerator = (element) => {
         const selectedProvince = document.querySelector('#province').value;
         if (selectedProvince.match(/^(?=\s*$)/)) {
@@ -20,6 +25,7 @@ export default function AddresFieldSet() {
         handleTriggerInput(element.target.previousElementSibling, PCGenerator.generatePC(postcalCode));
     };
 
+    //Función para disparar un evento de cambio en un input
     const handleTriggerInput = (target, enteredValue) => {
         const lastValue = target.value;
         target.value = enteredValue;
@@ -31,23 +37,34 @@ export default function AddresFieldSet() {
         target.dispatchEvent(event);
     };
 
-    return (
+    return (//Devolvemos el fragmento <fieldset> con los inputs para el domicilio
         <fieldset>
             <legend>Domicilio</legend>
             <div className='row g-3'>
                 <SelectInput
+                    // Establece el atributo 'name' e 'id' del elemento <select> como 'province'
                     selectNameID={'province'}
+
+                    // Establece la etiqueta del elemento <select> como 'Provincia'
                     selectLabel={'Provincia'}
-                    selectValues=
-                    {
+
+                    // Define las opciones del menú desplegable basándose en PCGenerator.provincesPostalCodes
+                    selectValues={
                         PCGenerator.provincesPostalCodes.map((province) => {
                             return { value: province.province, text: province.province }
                         })
                     }
+
+                    // Indica que este campo pertenece al formulario de dirección
                     formUsed={'address'}
+
+                    // Define la longitud o anchura del campo en el diseño del formulario (Bootstrap)
                     boxLength={'col-md-6'}
+
+                    // Indica que se necesita un mecanismo de retroalimentación para este campo
                     needFeedBack={true}
                 />
+
 
                 <TextInput nameID={'locality'} sublimText={'Localidad'} formUsed={'address'} boxLength={'col-md-6'} needFeedback={true} />
 
