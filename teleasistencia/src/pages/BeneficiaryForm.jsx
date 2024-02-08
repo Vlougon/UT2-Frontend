@@ -26,10 +26,10 @@ export default function BeneficiaryForm() {
         number: '',
         street: '',
     });
-    const [beneficiaryPhones, setBeneficiaryPhones] = useState([{
+    const [beneficiaryPhones, setBeneficiaryPhones] = useState({
         user_id: '',
         phone_number: '',
-    }]);
+    });
 
     const handlePersonalDataChange = (element) => {
         setBeneficiaryData({
@@ -49,6 +49,7 @@ export default function BeneficiaryForm() {
     const handlePhonesChange = (element) => {
         setBeneficiaryPhones({
             ...beneficiaryPhones,
+            [element.target.name]: element.target.value,
         });
     };
 
