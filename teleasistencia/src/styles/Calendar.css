@@ -1,0 +1,9 @@
+#calendar {
+    min-height: calc(100vh - 92px - 171px);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#calendar .modal {
+    background-color: rgba(0, 0, 0, .5);
+}

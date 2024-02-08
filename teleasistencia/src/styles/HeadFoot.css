@@ -1,0 +1,33 @@
+header {
+    background-color: #0012b4;
+    padding: 10px;
+    border-bottom: 4px solid #000e8d;
+}
+
+nav a {
+    color: white !important;
+}
+
+nav a img {
+    height: 50px;
+    width: 50px;
+}
+
+footer {
+    background-color: black;
+    padding: 5px;
+    color: white;
+}
+
+footer a {
+    display: inline-block;
+    margin-left: 3px;
+    color: yellow;
+}
+
+footer a img {
+    margin-left: 3px;
+    margin-top: 7px;
+    vertical-align: middle;
+    border: 1px solid white;
+}
