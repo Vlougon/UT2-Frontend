@@ -1,13 +1,13 @@
 import { useContext } from 'react';
-import { BeneficiaryFormContext } from '../pages/BeneficiaryForm';
+import { AuthContext } from '../contexts/AuthContext';
 import PhoneNumberInput from './PhoneNumberInput';
 import TextInput from './TextInput';
 import DNIGenerator from '../classes/DNIGenerator';
 import SSNGenerator from '../classes/SSNGenerator';
 
 export default function BeneficiaryPersonalDataFieldSet() {
-    const { beneficiaryData } = useContext(BeneficiaryFormContext);
-    const { handlePersonalDataChange } = useContext(BeneficiaryFormContext);
+    const { beneficiaryData } = useContext(AuthContext);
+    const { handlePersonalDataChange } = useContext(AuthContext);
 
     const dniGenerator = (element) => {
         handleTriggerInput(element.target.previousElementSibling, DNIGenerator.generateDNI());
@@ -29,7 +29,7 @@ export default function BeneficiaryPersonalDataFieldSet() {
     };
 
     const handlePersonalDataInputs = (element) => {
-        if (element.target.tagName === 'svg' || element.target.tagName === 'path') {
+        if (element.target.tagName === 'svg' || element.target.tagName === 'path' || element.target.tagName === 'DIV') {
             return
         }
 

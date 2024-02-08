@@ -1,4 +1,5 @@
-import { createContext, useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
 import BeneficiaryPersonalDataFieldSet from '../components/BeneficiaryPersonalDataFieldSet';
 import SocialDataFieldSet from '../components/SocialDataFieldSet';
 import AddresFieldSet from '../components/AddresFieldSet';
@@ -6,55 +7,10 @@ import DNIGenerator from '../classes/DNIGenerator';
 import PCGenerator from '../classes/PCGenerator';
 import '../styles/BeneficiaryForm.css';
 
-export const BeneficiaryFormContext = createContext();
-
 export default function BeneficiaryForm() {
-    const [beneficiaryData, setBeneficiaryData] = useState({
-        name: undefined,
-        first_surname: undefined,
-        second_surname: '',
-        dni: undefined,
-        birth_date: '----/--/--',
-        social_security_number: undefined,
-        rutine: '',
-        gender: undefined,
-        marital_status: undefined,
-        beneficiary_type: undefined,
-    });
-    const [beneficiaryAddressData, setBeneficiaryAddressData] = useState({
-        locality: undefined,
-        postal_code: undefined,
-        province: undefined,
-        number: undefined,
-        street: undefined,
-    });
-    const [beneficiaryPhones, setBeneficiaryPhones] = useState({
-        user_id: '',
-        phone_number: undefined,
-    });
-
-    const handlePersonalDataChange = (element) => {
-        setBeneficiaryData({
-            ...beneficiaryData,
-            [element.target.name]: element.target.value,
-        });
-    };
-
-    const handleAddressChange = (element) => {
-        setBeneficiaryAddressData({
-            ...beneficiaryAddressData,
-            [element.target.name]: element.target.value,
-        });
-    };
-
-
-    const handlePhonesChange = (element) => {
-        setBeneficiaryPhones({
-            ...beneficiaryPhones,
-            [element.target.name]: element.target.value,
-        });
-    };
-
+    const { beneficiaryData } = useContext(AuthContext);
+    const { addressData } = useContext(AuthContext);
+    const { beneficiaryPhones } = useContext(AuthContext);
 
     const handleSubmit = (element) => {
         element.preventDefault();
@@ -67,10 +23,10 @@ export default function BeneficiaryForm() {
             }
         }
 
-        for (const key in beneficiaryAddressData) {
-            if ((beneficiaryAddressData[key] && key === 'postal_code' && !beneficiaryAddressData[key].match(/^(?:0[1-9]|[1-4]\d|5[0-2])\d{3}$/)) ||
-                (beneficiaryAddressData[key] && key === 'postal_code' && beneficiaryAddressData.province && !PCGenerator.validPC(beneficiaryAddressData[key], beneficiaryAddressData.province)) ||
-                beneficiaryAddressData[key] === undefined) {
+        for (const key in addressData) {
+            if ((addressData[key] && key === 'postal_code' && !addressData[key].match(/^(?:0[1-9]|[1-4]\d|5[0-2])\d{3}$/)) ||
+                (addressData[key] && key === 'postal_code' && addressData.province && !PCGenerator.validPC(addressData[key], addressData.province)) ||
+                addressData[key] === undefined) {
                 handleFormFieldsValues(document.querySelector('#' + key));
             }
         }
@@ -81,6 +37,8 @@ export default function BeneficiaryForm() {
                 handleFormFieldsValues(document.querySelector('#' + key));
             }
         }
+
+        console.log(beneficiaryData, addressData, beneficiaryPhones);
     };
 
     const handleFormFieldsValues = (target) => {
@@ -99,24 +57,11 @@ export default function BeneficiaryForm() {
     return (
         <div id='beneficiaryForm' className='container-fluid'>
             <form action="#" method="post" onSubmit={handleSubmit}>
-                <BeneficiaryFormContext.Provider
-                    value={
-                        {
-                            beneficiaryData, setBeneficiaryData,
-                            beneficiaryAddressData, setBeneficiaryAddressData,
-                            beneficiaryPhones, setBeneficiaryPhones,
-                            handlePersonalDataChange,
-                            handleAddressChange,
-                            handlePhonesChange
-                        }
-                    }
-                >
-                    <BeneficiaryPersonalDataFieldSet />
+                <BeneficiaryPersonalDataFieldSet />
 
-                    <SocialDataFieldSet />
+                <SocialDataFieldSet />
 
-                    <AddresFieldSet />
-                </BeneficiaryFormContext.Provider>
+                <AddresFieldSet />
                 <input type="submit" className='btn btn-primary' value="Dar de Alta" />
             </form>
         </div>

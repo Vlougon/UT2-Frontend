@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import AllergiesIllnessesFieldSet from '../components/Allergies&IllnessesFieldSet';
 import MedicinesFieldSet from '../components/MedicinesFieldSet';
@@ -6,22 +7,8 @@ import LocalStrucutresFieldSet from '../components/LocalStructures';
 import '../styles/MedicalDataForm.css';
 
 export default function MedicalDataForm() {
-    const [medicalFormValues, setMedicalFormValues] = useState({
-        beneficiary_id: parseInt(useParams().userid),
-        allergies: '',
-        illnesses: '',
-        morning_medication: '',
-        afternoon_medication: '',
-        night_medication: '',
-        preferent_morning_calls_hour: '--:--',
-        preferent_afternoon_calls_hour: '--:--',
-        preferent_night_calls_hour: '--:--',
-        emergency_room_on_town: null,
-        firehouse_on_town: null,
-        police_station_on_town: null,
-        outpatient_clinic_on_town: null,
-        ambulance_on_town: null,
-    });
+    const beneficiaryID = parseInt(useParams().userid);
+    const { medicalFormValues, setMedicalFormValues } = useContext(AuthContext);
 
     const handleChange = (element) => {
         setMedicalFormValues({
@@ -32,6 +19,12 @@ export default function MedicalDataForm() {
 
     const handleSubmit = (element) => {
         element.preventDefault();
+
+        // Fix This. Wee Need to Load the userDI when page loads.
+        setMedicalFormValues({
+            ...medicalFormValues,
+            'beneficiary_id': beneficiaryID,
+        });
 
         for (const key in medicalFormValues) {
             if ((key === 'preferent_morning_calls_hour' && (medicalFormValues[key] < '06:00' || medicalFormValues[key] > '13:59')) ||
