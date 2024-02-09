@@ -10,7 +10,7 @@ import '../styles/BeneficiaryForm.css';
 export default function BeneficiaryForm() {
     const { beneficiaryData } = useContext(AuthContext);
     const { addressData } = useContext(AuthContext);
-    const { beneficiaryPhones } = useContext(AuthContext);
+    const { phones } = useContext(AuthContext);
 
     const handleSubmit = (element) => {
         element.preventDefault();
@@ -31,14 +31,14 @@ export default function BeneficiaryForm() {
             }
         }
 
-        for (const key in beneficiaryPhones) {
-            if ((beneficiaryPhones[key] && beneficiaryPhones[key].length !== 9 && key === 'phone_number') ||
-                beneficiaryPhones[key] === undefined) {
+        for (const key in phones) {
+            if ((phones[key] && phones[key].length !== 9 && key === 'phone_number') ||
+                phones[key] === undefined) {
                 handleFormFieldsValues(document.querySelector('#' + key));
             }
         }
 
-        console.log(beneficiaryData, addressData, beneficiaryPhones);
+        console.log(beneficiaryData, addressData, phones);
     };
 
     const handleFormFieldsValues = (target) => {

@@ -42,9 +42,15 @@ export function AuthProvider({ children }) {
         addressable_id: 0
     });
 
-    const [beneficiaryPhones, setBeneficiaryPhones] = useState({
-        user_id: '',
+    const [phones, setPhones] = useState({
         phone_number: undefined,
+    });
+
+    const [contactData, setContactData] = useState({
+        name: '',
+        first_surname: '',
+        second_surname: '',
+        contact_type: '',
     });
 
     const handlePersonalDataChange = (element) => {
@@ -62,8 +68,8 @@ export function AuthProvider({ children }) {
     };
 
     const handlePhonesChange = (element) => {
-        setBeneficiaryPhones({
-            ...beneficiaryPhones,
+        setPhones({
+            ...phones,
             [element.target.name]: element.target.value,
         });
     };
@@ -74,7 +80,8 @@ export function AuthProvider({ children }) {
                 medicalFormValues, setMedicalFormValues,
                 beneficiaryData, setBeneficiaryData,
                 addressData, setAddressData,
-                beneficiaryPhones, setBeneficiaryPhones,
+                phones, setPhones,
+                contactData, setContactData,
                 handlePersonalDataChange, handleAddressChange, handlePhonesChange
             }}>
             {children}

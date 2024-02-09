@@ -38,6 +38,15 @@
     box-shadow: 0 0 10px 3px rgba(13, 110, 253, .6);
 }
 
+#contactForm .btn-orange {
+    background-color: #ffa667 !important;
+    color: black !important;
+}
+
+#contactForm .btn-orange:hover {
+    background-color: #ff6a00 !important;
+}
+
 @media (max-width: 768px) {
     fieldset>legend {
         text-align: center;

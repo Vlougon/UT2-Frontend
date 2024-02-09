@@ -1,4 +1,19 @@
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+import TextInput from "./TextInput";
+import SelectInput from "./SelectInput";
+import PhoneNumberInput from "./PhoneNumberInput";
+
 export default function ContactPersonalDataFieldSet() {
+    const { contactData, setContactData } = useContext(AuthContext);
+
+    const handleChange = (element) => {
+        setContactData({
+            ...contactData,
+            [element.target.name]: element.target.value,
+        });
+    };
+
     return (
         <fieldset>
             <legend>Datos Personales</legend>
