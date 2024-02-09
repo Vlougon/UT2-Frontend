@@ -27,6 +27,16 @@
     border: 1px solid black !important;
 }
 
+#contactForm select.is-invalid,
+#contactForm span.is-invalid,
+#contactForm input.is-invalid {
+    border: 1px solid red !important;
+}
+
+#contactForm span.is-invalid {
+    background-color: rgb(255, 181, 181);
+}
+
 #contactForm input[type=submit] {
     padding: 5px;
     border-radius: 10px;

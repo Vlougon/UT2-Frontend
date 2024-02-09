@@ -114,7 +114,7 @@ export default function BeneficiaryPersonalDataFieldSet() {
                     </div>
                 </div>
 
-                <PhoneNumberInput />
+                <PhoneNumberInput boxLength={'col-md-3'} />
 
                 <div className='col-12'>
                     <label htmlFor="rutine" className="form-label">Rutina:</label>

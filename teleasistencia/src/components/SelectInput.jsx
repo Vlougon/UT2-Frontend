@@ -5,8 +5,10 @@ export default function SelectInput({ selectNameID, selectLabel, selectValues, f
     const [options] = useState([{ value: '', text: selectLabel }]);
     const { beneficiaryData } = useContext(AuthContext);
     const { addressData } = useContext(AuthContext);
+    const { contactData } = useContext(AuthContext);
     const { handlePersonalDataChange } = useContext(AuthContext);
     const { handleAddressChange } = useContext(AuthContext);
+    const { handleContactChange } = useContext(AuthContext);
 
     const handleSelectInput = (element) => {
         if (!needFeedBack) {
@@ -17,6 +19,36 @@ export default function SelectInput({ selectNameID, selectLabel, selectValues, f
         element.target.previousElementSibling.className = 'input-group-text';
         element.target.nextElementSibling.className = 'invalid-feedback';
     };
+
+    const handleOnChangeValue = (operation) => {
+        let valueToDisplay = '';
+        let functionToDo = '';
+
+        switch (formUsed) {
+            case 'beneficiary':
+                valueToDisplay = beneficiaryData[selectNameID];
+                functionToDo = handlePersonalDataChange;
+                break;
+            case 'address':
+                valueToDisplay = addressData[selectNameID];
+                functionToDo = handleAddressChange;
+                break;
+            case 'contact':
+                valueToDisplay = contactData[selectNameID];
+                functionToDo = handleContactChange;
+                break;
+            default:
+                valueToDisplay = 'Error';
+                functionToDo = console.error('!Fallo al Renerizar el Valor y su Función¡');
+                break;
+        }
+
+        if (operation === 'onChange') {
+            return functionToDo
+        } else {
+            return valueToDisplay
+        }
+    }
 
     const OptionsRender = () => {
         let tempID = 1;
@@ -40,6 +72,8 @@ export default function SelectInput({ selectNameID, selectLabel, selectValues, f
         switch (formUsed) {
             case 'beneficiary': feedBackMessage = `¡Introduza un ${selectLabel} valido para el Beneficiario!`;
                 break;
+            case 'contact': feedBackMessage = `¡Introduza un ${selectLabel} valido!`;
+                break;
             default: feedBackMessage = '¡Introduzca Datos Validos!'
                 break;
         }
@@ -62,7 +96,7 @@ export default function SelectInput({ selectNameID, selectLabel, selectValues, f
                         <path d="M128 136c0-22.1-17.9-40-40-40L40 96C17.9 96 0 113.9 0 136l0 48c0 22.1 17.9 40 40 40H88c22.1 0 40-17.9 40-40l0-48zm0 192c0-22.1-17.9-40-40-40H40c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40H88c22.1 0 40-17.9 40-40V328zm32-192v48c0 22.1 17.9 40 40 40h48c22.1 0 40-17.9 40-40V136c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40zM288 328c0-22.1-17.9-40-40-40H200c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40h48c22.1 0 40-17.9 40-40V328zm32-192v48c0 22.1 17.9 40 40 40h48c22.1 0 40-17.9 40-40V136c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40zM448 328c0-22.1-17.9-40-40-40H360c-22.1 0-40 17.9-40 40v48c0 22.1 17.9 40 40 40h48c22.1 0 40-17.9 40-40V328z" />
                     </svg>
                 </span>
-                <select id={selectNameID} name={selectNameID} value={formUsed === 'address' ? addressData[selectNameID] : beneficiaryData[selectNameID]} aria-label={selectNameID} className="form-select" aria-describedby={formUsed + selectNameID} onChange={formUsed === 'address' ? handleAddressChange : handlePersonalDataChange} onClick={handleSelectInput}>
+                <select id={selectNameID} name={selectNameID} value={handleOnChangeValue('value')} aria-label={selectNameID} className="form-select" aria-describedby={formUsed + selectNameID} onChange={handleOnChangeValue('onChange')} onClick={handleSelectInput}>
                     <OptionsRender />
                 </select>
                 <FeedBackRender />

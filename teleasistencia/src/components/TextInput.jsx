@@ -4,8 +4,10 @@ import { AuthContext } from "../contexts/AuthContext";
 export default function TextInput({ nameID, sublimText, formUsed, boxLength, needFeedback = false }) {
     const { beneficiaryData } = useContext(AuthContext);
     const { addressData } = useContext(AuthContext);
+    const { contactData } = useContext(AuthContext);
     const { handlePersonalDataChange } = useContext(AuthContext);
     const { handleAddressChange } = useContext(AuthContext);
+    const { handleContactChange } = useContext(AuthContext);
 
     const handleTextInput = (element) => {
         if (!needFeedback) {
@@ -17,8 +19,42 @@ export default function TextInput({ nameID, sublimText, formUsed, boxLength, nee
         element.target.nextElementSibling.className = 'invalid-feedback';
     };
 
+    const handleOnChangeValue = (operation) => {
+        let valueToDisplay = '';
+        let functionToDo = '';
+
+        switch (formUsed) {
+            case 'beneficiary':
+                valueToDisplay = beneficiaryData[nameID];
+                functionToDo = handlePersonalDataChange;
+                break;
+            case 'address':
+                valueToDisplay = addressData[nameID];
+                functionToDo = handleAddressChange;
+                break;
+            case 'contact':
+                valueToDisplay = contactData[nameID];
+                functionToDo = handleContactChange;
+                break;
+            default:
+                valueToDisplay = 'Error';
+                functionToDo = console.error('!Fallo al Renerizar el Valor y su Función¡');
+                break;
+        }
+
+        if (operation === 'onChange') {
+            return functionToDo
+        } else {
+            return valueToDisplay
+        }
+    }
+
     const FeedBackRender = () => {
         let feedBackMessage = '';
+
+        if (!needFeedback) {
+            return
+        }
 
         switch (formUsed) {
             case 'beneficiary': feedBackMessage = `¡Introduza un ${sublimText} valido para el Beneficiario!`;
@@ -33,13 +69,11 @@ export default function TextInput({ nameID, sublimText, formUsed, boxLength, nee
                 break;
         }
 
-        if (needFeedback) {
-            return (
-                <div className="invalid-feedback">
-                    {feedBackMessage}
-                </div>
-            )
-        }
+        return (
+            <div className="invalid-feedback">
+                {feedBackMessage}
+            </div>
+        )
     };
 
     return (
@@ -51,7 +85,7 @@ export default function TextInput({ nameID, sublimText, formUsed, boxLength, nee
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                     </svg>
                 </span>
-                <input type="text" id={nameID} name={nameID} value={formUsed === 'address' ? addressData[nameID] : beneficiaryData[nameID]} className='form-control' placeholder={sublimText} aria-describedby={formUsed + nameID} autoComplete="off" onChange={formUsed === 'address' ? handleAddressChange : handlePersonalDataChange} onClick={handleTextInput} />
+                <input type="text" id={nameID} name={nameID} value={handleOnChangeValue('value')} className='form-control' placeholder={sublimText} aria-describedby={formUsed + nameID} autoComplete="off" onChange={handleOnChangeValue('onChange')} onClick={handleTextInput} />
 
                 <FeedBackRender />
             </div>

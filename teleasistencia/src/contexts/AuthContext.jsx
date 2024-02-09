@@ -74,6 +74,13 @@ export function AuthProvider({ children }) {
         });
     };
 
+    const handleContactChange = (element) => {
+        setContactData({
+            ...contactData,
+            [element.target.name]: element.target.value,
+        });
+    };
+
     return (
         <AuthContext.Provider
             value={{
@@ -82,7 +89,7 @@ export function AuthProvider({ children }) {
                 addressData, setAddressData,
                 phones, setPhones,
                 contactData, setContactData,
-                handlePersonalDataChange, handleAddressChange, handlePhonesChange
+                handlePersonalDataChange, handleAddressChange, handlePhonesChange, handleContactChange,
             }}>
             {children}
         </AuthContext.Provider>

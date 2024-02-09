@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from "../contexts/AuthContext";
 
-export default function PhoneNumberInput() {
+export default function PhoneNumberInput({ boxLength }) {
     const { phones } = useContext(AuthContext);
     const { handlePhonesChange } = useContext(AuthContext);
 
@@ -12,7 +12,7 @@ export default function PhoneNumberInput() {
     };
 
     return (
-        <div className='col-md-3'>
+        <div className={boxLength}>
             <label htmlFor="phone_number" className="form-label">Número de Teléfono:</label>
             <div className='input-group has-validation'>
                 <span className='input-group-text' id='beneficiaryPhoneNumber'>
