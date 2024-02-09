@@ -28,9 +28,14 @@
 }
 
 #contactForm input[type=submit] {
-    background-color: #EB6300;
     padding: 5px;
     border-radius: 10px;
+    font-weight: bold;
+}
+
+#contactForm input[type=submit]:hover {
+    background-color: #005be3;
+    box-shadow: 0 0 10px 3px rgba(13, 110, 253, .6);
 }
 
 @media (max-width: 768px) {

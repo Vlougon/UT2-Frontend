@@ -80,7 +80,7 @@ export default function MedicalDataForm() {
                     handler={handleChange}
                 />
 
-                <input type="submit" value="Asignar Datos Médicos" />
+                <input type="submit" className='btn btn-primary' value="Asignar Datos Médicos" />
             </form>
         </div>
     )

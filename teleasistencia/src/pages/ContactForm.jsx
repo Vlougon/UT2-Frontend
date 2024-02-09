@@ -12,7 +12,7 @@ export default function ContactForm() {
 
                 <AddresFieldSet />
 
-                <input type="submit" value="Asignar Contacto" />
+                <input type="submit" className="btn btn-primary" value="Asignar Contacto" />
             </form>
         </div>
     )
