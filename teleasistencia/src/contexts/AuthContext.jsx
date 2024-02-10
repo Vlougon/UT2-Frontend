@@ -53,6 +53,21 @@ export function AuthProvider({ children }) {
         contact_type: '',
     });
 
+    const [callData, setCallData] = useState({
+        user_id: 0,
+        beneficiary_id: 0,
+        date: new Date().getFullYear() + '-' + (new Date().getMonth() + 1).toString().padStart(2, '0') + '-' + new Date().getDate().toString().padStart(2, '0'),
+        time: new Date().getHours().toString().padStart(2, '0') + ':' + new Date().getMinutes().toString().padStart(2, '0'),
+        turn: undefined,
+        duration: 0,
+        call_type: undefined,
+        call_kind: undefined,
+        answered_call: undefined,
+        observations: undefined,
+        description: '',
+        contacted_112: false,
+    });
+
     const handlePersonalDataChange = (element) => {
         setBeneficiaryData({
             ...beneficiaryData,
@@ -81,6 +96,13 @@ export function AuthProvider({ children }) {
         });
     };
 
+    const handleCallChange = (element) => {
+        setCallData({
+            ...callData,
+            [element.target.name]: element.target.value,
+        });
+    };
+
     return (
         <AuthContext.Provider
             value={{
@@ -89,7 +111,9 @@ export function AuthProvider({ children }) {
                 addressData, setAddressData,
                 phones, setPhones,
                 contactData, setContactData,
+                callData, setCallData,
                 handlePersonalDataChange, handleAddressChange, handlePhonesChange, handleContactChange,
+                handleCallChange,
             }}>
             {children}
         </AuthContext.Provider>

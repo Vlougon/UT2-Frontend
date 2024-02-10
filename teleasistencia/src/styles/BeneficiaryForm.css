@@ -40,10 +40,6 @@
     background-color: rgb(255, 181, 181);
 }
 
-#beneficiaryForm form fieldset div.requiredRadio {
-    color: red !important;
-}
-
 #beneficiaryForm div.invalid-feedback p {
     margin-bottom: 0 !important;
 }

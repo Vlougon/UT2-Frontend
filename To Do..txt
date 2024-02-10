@@ -1,0 +1,22 @@
+/* ---- BACK ---- */
+Add 'call_kind' to the Back.
+Add Rol Restrictions.
+Improve Data Types.
+
+/* ---- FRONT ---- */
+Reorganize the Code.
+Add PDF Generator and Visualizator to the 'DocumentGenerator' view.
+Finish Call Form.
+Finish Calendar Form.
+Finish Assitant Form.
+Finish Beneficiary (Normal, incoming and outgoing) List.
+Finish Assitant List.
+Finish Contacts List.
+Finish Medical Data List.
+Record Fake Call's Audio.
+Render based on USer Role.
+
+/* ---- EXTRA ---- */
+Add a 'Repite' to the Calendar.
+Send Emails when calendar eeminder is near.
+Imporve Duration Render.

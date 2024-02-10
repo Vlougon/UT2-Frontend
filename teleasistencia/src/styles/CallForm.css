@@ -28,6 +28,17 @@
     border: 1px solid black !important;
 }
 
+#callForm textarea.is-invalid,
+#callForm select.is-invalid,
+#callForm span.is-invalid,
+#callForm input.is-invalid {
+    border: 1px solid red !important;
+}
+
+#callForm span.is-invalid {
+    background-color: rgb(255, 181, 181);
+}
+
 #callForm textarea {
     resize: none !important;
 }

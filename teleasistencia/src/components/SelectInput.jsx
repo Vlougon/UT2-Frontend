@@ -6,9 +6,11 @@ export default function SelectInput({ selectNameID, selectLabel, selectValues, f
     const { beneficiaryData } = useContext(AuthContext);
     const { addressData } = useContext(AuthContext);
     const { contactData } = useContext(AuthContext);
+    const { callData } = useContext(AuthContext);
     const { handlePersonalDataChange } = useContext(AuthContext);
     const { handleAddressChange } = useContext(AuthContext);
     const { handleContactChange } = useContext(AuthContext);
+    const { handleCallChange } = useContext(AuthContext);
 
     const handleSelectInput = (element) => {
         if (!needFeedBack) {
@@ -37,9 +39,13 @@ export default function SelectInput({ selectNameID, selectLabel, selectValues, f
                 valueToDisplay = contactData[selectNameID];
                 functionToDo = handleContactChange;
                 break;
+            case 'call':
+                valueToDisplay = callData[selectNameID];
+                functionToDo = handleCallChange;
+                break;
             default:
                 valueToDisplay = 'Error';
-                functionToDo = console.error('!Fallo al Renerizar el Valor y su Función¡');
+                functionToDo = console.error('!Fallo al Renderizar el Valor y su Función¡');
                 break;
         }
 
