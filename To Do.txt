@@ -1,9 +1,12 @@
 /* ---- BACK ---- */
-Add 'call_kind' to the Back.
+Add 'call_kind' to the Back (Call).
+Add 'repeat' and 'backgroundColor' to the Back (Reminder).
+Remove 'terminated' to the Back (Reminder).
 Add Rol Restrictions.
 Improve Data Types.
 
 /* ---- FRONT ---- */
+Add Flash Messages.
 Reorganize the Code.
 Add PDF Generator and Visualizator to the 'DocumentGenerator' view.
 Finish Call Form.
@@ -14,9 +17,9 @@ Finish Assitant List.
 Finish Contacts List.
 Finish Medical Data List.
 Record Fake Call's Audio.
-Render based on USer Role.
+Render based on User Role.
+Improve Home View.
 
 /* ---- EXTRA ---- */
-Add a 'Repite' to the Calendar.
-Send Emails when calendar eeminder is near.
+Send Emails when calendar reminder is near.
 Imporve Duration Render.

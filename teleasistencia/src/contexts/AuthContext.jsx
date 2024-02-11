@@ -68,6 +68,8 @@ export function AuthProvider({ children }) {
         contacted_112: false,
     });
 
+    const [reminderData, setReminderData] = useState([]);
+
     const handlePersonalDataChange = (element) => {
         setBeneficiaryData({
             ...beneficiaryData,
@@ -103,6 +105,13 @@ export function AuthProvider({ children }) {
         });
     };
 
+    const handleReminderDataChange = (reminder) => {
+        setReminderData([
+            ...reminderData,
+            reminder,
+        ]);
+    };
+
     return (
         <AuthContext.Provider
             value={{
@@ -112,8 +121,9 @@ export function AuthProvider({ children }) {
                 phones, setPhones,
                 contactData, setContactData,
                 callData, setCallData,
+                reminderData, setReminderData,
                 handlePersonalDataChange, handleAddressChange, handlePhonesChange, handleContactChange,
-                handleCallChange,
+                handleCallChange, handleReminderDataChange,
             }}>
             {children}
         </AuthContext.Provider>
