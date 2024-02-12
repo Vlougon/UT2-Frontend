@@ -12,11 +12,12 @@ Add PDF Generator and Visualizator to the 'DocumentGenerator' view.
 Finish Call Form.
 Finish Assitant Form.
 Finish Beneficiary (Normal, incoming and outgoing) List.
-Finish Assitant List.
 Finish Contacts List.
 Finish Medical Data List.
 Record Fake Call's Audio.
 Render based on User Role.
+Add the 'Delete' functionality to the lists.
+Improve Layout (Add NavBar).
 Improve Home View.
 
 /* ---- EXTRA ---- */

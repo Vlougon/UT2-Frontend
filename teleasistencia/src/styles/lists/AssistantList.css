@@ -18,6 +18,7 @@
 
 #assistantList table thead {
     border-left: 1px solid #e05d00;
+    border-right: 1px solid #e05d00;
 }
 
 #assistantList table tbody {
@@ -30,13 +31,15 @@
     color: white;
 }
 
-#assistantList .btn-info,
 #assistantList .btn-warning,
 #assistantList .btn-outline-danger {
     width: 80%;
 }
 
+@media (max-width: 768px) {
 
-#assistantList .btn-success {
-    width: 60%;
+    #assistantList .btn-warning,
+    #assistantList .btn-outline-danger {
+        width: 90%;
+    }
 }
