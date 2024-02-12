@@ -8,7 +8,7 @@ Improve Data Types.
 /* ---- FRONT ---- */
 Add Flash Messages.
 Reorganize the Code.
-Add PDF Generator and Visualizator to the 'DocumentGenerator' view.
+Add PDF Generator and Visualizator to the 'DocumentGenerator' view (Finish Document Generaotr View).
 Finish Call Form.
 Finish Assitant Form.
 Record Fake Call's Audio.
