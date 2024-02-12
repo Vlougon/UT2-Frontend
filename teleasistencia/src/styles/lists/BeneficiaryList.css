@@ -18,6 +18,7 @@
 
 #beneficiaryList table thead {
     border-left: 1px solid #e05d00;
+    border-right: 1px solid #e05d00;
 }
 
 #beneficiaryList table tbody {
@@ -30,13 +31,26 @@
     color: white;
 }
 
+#beneficiaryList .btn-primary,
 #beneficiaryList .btn-info,
 #beneficiaryList .btn-warning,
-#beneficiaryList .btn-outline-danger {
+#beneficiaryList .btn-outline-danger,
+#beneficiaryList .btn-outline-dark {
     width: 80%;
 }
 
 
 #beneficiaryList .btn-success {
     width: 60%;
+}
+
+@media (max-width: 768px) {
+
+    #beneficiaryList .btn-warning {
+        width: 100%;
+    }
+
+    #beneficiaryList .btn-success {
+        width: 70%;
+    }
 }

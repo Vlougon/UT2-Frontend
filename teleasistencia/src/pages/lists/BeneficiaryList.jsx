@@ -56,15 +56,17 @@ export default function BeneficiaryList() {
 
     return (
         <div id='beneficiaryList' className="container-fluid">
-            <table id='beneficiaryTable' className="table table-striped">
-                <thead>
-                    <TableHeadRender />
-                </thead>
+            <div className='table-responsive'>
+                <table id='beneficiaryTable' className="table table-striped table-hover">
+                    <thead>
+                        <TableHeadRender />
+                    </thead>
 
-                <tbody>
-                    <TableRows columns={tableCols} list={listType} dataArray={beneficiaries} />
-                </tbody>
-            </table>
+                    <tbody>
+                        <TableRows columns={tableCols} list={listType} dataArray={beneficiaries} />
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

@@ -17,20 +17,22 @@ const contact = [
 export default function ContactList() {
     return (
         <div id="contactList" className="container-fluid">
-            <table id='contactTable' className="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nombre del Contacto</th>
-                        <th>Beneficiarios Relacionados</th>
-                        <th>Modificar Datos del Contacto</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
+            <div className='table-responsive'>
+                <table id='contactTable' className="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre del Contacto</th>
+                            <th>Beneficiarios Relacionados</th>
+                            <th>Modificar Datos del Contacto</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <TableRows columns={4} list={'contact'} dataArray={contact} />
-                </tbody>
-            </table>
+                    <tbody>
+                        <TableRows columns={4} list={'contact'} dataArray={contact} />
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

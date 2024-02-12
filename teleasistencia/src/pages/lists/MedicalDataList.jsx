@@ -15,19 +15,21 @@ const medcials = [
 export default function MedicalDataList() {
     return (
         <div id="medicalList" className="container-fluid">
-            <table id='medicalTable' className="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Beneficiario Relacionado</th>
-                        <th>Modificar Datos Médicos</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
+            <div className='table-responsive'>
+                <table id='medicalTable' className="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Beneficiario Relacionado</th>
+                            <th>Modificar Datos Médicos</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <TableRows columns={3} list={'medical'} dataArray={medcials} />
-                </tbody>
-            </table>
+                    <tbody>
+                        <TableRows columns={3} list={'medical'} dataArray={medcials} />
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

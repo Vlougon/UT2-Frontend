@@ -18,6 +18,7 @@
 
 #medicalList table thead {
     border-left: 1px solid #e05d00;
+    border-right: 1px solid #e05d00;
 }
 
 #medicalList table tbody {
@@ -36,4 +37,11 @@
 
 #medicalList .btn-success {
     width: 50%;
+}
+
+@media (max-width: 768px) {
+
+    #medicalList .btn-success {
+        width: 70%;
+    }
 }
