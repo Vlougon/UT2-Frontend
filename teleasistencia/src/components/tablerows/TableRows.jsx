@@ -1,9 +1,22 @@
 import { Link } from 'react-router-dom';
 
-export default function TableRows({ list, dataArray }) {
+export default function TableRows({ columns, list, dataArray }) {
     const tableRows = [];
 
     const TableCellRender = () => {
+
+        if (dataArray.length === 0) {
+            tableRows.push(
+                <tr key={0}>
+                    <td colSpan={columns}>¡Nada qué Mostrar!</td>
+                </tr>
+            );
+
+            return (
+                tableRows.concat()
+            )
+        }
+
         switch (list) {
             case 'user':
                 for (const user of dataArray) {

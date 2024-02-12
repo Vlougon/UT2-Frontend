@@ -29,7 +29,7 @@ export default function AssistantList() {
                     </thead>
 
                     <tbody>
-                        <TableRows list={'user'} dataArray={users} />
+                        <TableRows columns={4} list={'user'} dataArray={users} />
                     </tbody>
                 </table>
             </div>

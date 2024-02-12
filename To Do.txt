@@ -23,3 +23,4 @@ Improve Home View.
 /* ---- EXTRA ---- */
 Send Emails when calendar reminder is near.
 Imporve Duration Render.
+Improve Blank Lists Render.
