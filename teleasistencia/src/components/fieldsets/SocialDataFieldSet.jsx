@@ -1,4 +1,4 @@
-import SelectInput from "./SelectInput";
+import SelectInput from "../inputs/SelectInput";
 
 export default function SocialDataFieldSet() {
     return (

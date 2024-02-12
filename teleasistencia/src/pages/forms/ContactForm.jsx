@@ -1,24 +1,22 @@
-import { useContext } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
-import BeneficiaryPersonalDataFieldSet from '../components/BeneficiaryPersonalDataFieldSet';
-import SocialDataFieldSet from '../components/SocialDataFieldSet';
-import AddresFieldSet from '../components/AddresFieldSet';
-import DNIGenerator from '../classes/DNIGenerator';
-import PCGenerator from '../classes/PCGenerator';
-import '../styles/BeneficiaryForm.css';
+// import { useParams, Link } from 'react-router-dom';
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
+import ContactPersonalDataFieldSet from "../../components/fieldsets/ContactPersonalDataFieldSet";
+import AddresFieldSet from "../../components/fieldsets/AddresFieldSet";
+import PCGenerator from "../../classes/PCGenerator";
+import '../../styles/forms/ContactForm.css';
 
-export default function BeneficiaryForm() {
-    const { beneficiaryData } = useContext(AuthContext);
+export default function ContactForm() {
+    const { contactData } = useContext(AuthContext);
     const { addressData } = useContext(AuthContext);
     const { phones } = useContext(AuthContext);
 
     const handleSubmit = (element) => {
         element.preventDefault();
 
-        for (const key in beneficiaryData) {
-            if ((beneficiaryData[key] && key === 'dni' && !DNIGenerator.verifyDNI(beneficiaryData[key])) ||
-                (beneficiaryData[key] && key === 'birth_date' && beneficiaryData[key] >= (new Date().getFullYear() - 5) + '/' + (new Date().getDay()).toString().padStart(2, '0') + '/' + (new Date().getMonth()).toString().padStart(2, '0')) ||
-                beneficiaryData[key] === undefined || beneficiaryData[key] === '----/--/--') {
+        for (const key in contactData) {
+            if ((key !== 'second_surname' && contactData[key] === undefined) ||
+                (key !== 'second_surname' && contactData[key].match(/^(?=\s*$)/))) {
                 handleFormFieldsValues(document.querySelector('#' + key));
             }
         }
@@ -38,14 +36,14 @@ export default function BeneficiaryForm() {
             }
         }
 
-        console.log(beneficiaryData, addressData, phones);
+        console.log(contactData, addressData, phones);
     };
 
     const handleFormFieldsValues = (target) => {
         target.className += ' is-invalid';
         target.previousElementSibling.className += ' is-invalid';
 
-        if (target.id === 'dni' || target.id === 'social_security_number' || target.id === 'postal_code') {
+        if (target.id === 'postal_code') {
             target.nextElementSibling.className += ' is-invalid';
             target.nextElementSibling.nextElementSibling.className += ' d-block';
             return
@@ -55,15 +53,15 @@ export default function BeneficiaryForm() {
     };
 
     return (
-        <div id='beneficiaryForm' className='container-fluid'>
+        <div id="contactForm" className="container-fluid">
             <form action="#" method="post" onSubmit={handleSubmit}>
-                <BeneficiaryPersonalDataFieldSet />
 
-                <SocialDataFieldSet />
+                <ContactPersonalDataFieldSet />
 
                 <AddresFieldSet />
-                <input type="submit" className='btn btn-primary' value="Dar de Alta" />
+
+                <input type="submit" className="btn btn-primary" value="Asignar Contacto" />
             </form>
         </div>
-    );
+    )
 }

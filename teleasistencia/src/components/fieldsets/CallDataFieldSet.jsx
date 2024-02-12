@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { AuthContext } from "../contexts/AuthContext";
-import SelectInput from "./SelectInput";
+import { AuthContext } from "../../contexts/AuthContext";
+import SelectInput from "../inputs/SelectInput";
 
 export default function CallDataFieldSet() {
     const { callData } = useContext(AuthContext);

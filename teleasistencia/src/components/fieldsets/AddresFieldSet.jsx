@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { AuthContext } from '../contexts/AuthContext';
-import TextInput from "./TextInput";
-import SelectInput from "./SelectInput";
-import PCGenerator from "../classes/PCGenerator";
+import { AuthContext } from '../../contexts/AuthContext';
+import TextInput from "../inputs/TextInput";
+import SelectInput from "../inputs/SelectInput";
+import PCGenerator from "../../classes/PCGenerator";
 
 export default function AddresFieldSet() {
     const { addressData } = useContext(AuthContext);

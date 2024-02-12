@@ -1,22 +1,22 @@
-import '../styles/AssistantList.css';
+import '../../styles/lists/ContactList.css';
 
-export default function AssistantList() {
+export default function ContactList() {
     return (
-        <div id='assistantList' className='container-fluid'>
-            <table id='assistantTable' className="table table-striped">
+        <div id="contactList" className="container-fluid">
+            <table id='contactTable' className="table table-striped">
                 <thead>
                     <tr>
-                        <th>Nombre del Asistente</th>
-                        <th>Rol</th>
-                        <th>Editar Datos</th>
+                        <th>Nombre del Contacto</th>
+                        <th>Beneficiarios Relacionados</th>
+                        <th>Modificar Datos del Contacto</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr>
+                        <td>Jesuscristo Redentor</td>
                         <td>Judas Iscariote</td>
-                        <td>Supervisor</td>
                         <td>
                             <button className="btn btn-warning">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -35,8 +35,8 @@ export default function AssistantList() {
                     </tr>
 
                     <tr>
+                        <td>Jesuscristo Redentor</td>
                         <td>Judas Iscariote</td>
-                        <td>Asistente</td>
                         <td>
                             <button className="btn btn-warning">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -55,8 +55,8 @@ export default function AssistantList() {
                     </tr>
 
                     <tr>
+                        <td>Jesuscristo Redentor</td>
                         <td>Judas Iscariote</td>
-                        <td>Asistente</td>
                         <td>
                             <button className="btn btn-warning">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">

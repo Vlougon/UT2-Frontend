@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import BigShortCut from '../components/BigShortCut';
-import ShortCut from '../components/ShortCut';
-import ShortCutModal from '../components/ShortCutModal';
+import BigShortCut from '../components/shortcuts/BigShortCut';
+import ShortCut from '../components/shortcuts/ShortCut';
+import ShortCutModal from '../components/shortcuts/ShortCutModal';
 import '../styles/HomePage.css';
 
 export default function HomePage() {

@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
-import PhoneNumberInput from './PhoneNumberInput';
-import TextInput from './TextInput';
-import DNIGenerator from '../classes/DNIGenerator';
-import SSNGenerator from '../classes/SSNGenerator';
+import { AuthContext } from '../../contexts/AuthContext';
+import PhoneNumberInput from '../inputs/PhoneNumberInput';
+import TextInput from '../inputs/TextInput';
+import DNIGenerator from '../../classes/DNIGenerator';
+import SSNGenerator from '../../classes/SSNGenerator';
 
 export default function BeneficiaryPersonalDataFieldSet() {
     const { beneficiaryData } = useContext(AuthContext);

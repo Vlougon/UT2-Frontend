@@ -1,5 +1,5 @@
-import AssistantPersonalDataFieldSet from '../components/AssistntPersonalDataFieldSet';
-import '../styles/AssistantForm.css';
+import AssistantPersonalDataFieldSet from '../../components/fieldsets/AssistntPersonalDataFieldSet';
+import '../../styles/forms/AssistantForm.css';
 
 
 export default function AssistantForm() {

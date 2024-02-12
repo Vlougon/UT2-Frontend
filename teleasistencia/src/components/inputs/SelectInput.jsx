@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export default function SelectInput({ selectNameID, selectLabel, selectValues, formUsed, boxLength, needFeedBack = false }) {
     const [options] = useState([{ value: '', text: selectLabel }]);

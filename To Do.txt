@@ -10,7 +10,6 @@ Add Flash Messages.
 Reorganize the Code.
 Add PDF Generator and Visualizator to the 'DocumentGenerator' view.
 Finish Call Form.
-Finish Calendar Form.
 Finish Assitant Form.
 Finish Beneficiary (Normal, incoming and outgoing) List.
 Finish Assitant List.

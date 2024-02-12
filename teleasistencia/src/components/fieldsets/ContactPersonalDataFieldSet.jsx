@@ -1,6 +1,6 @@
-import TextInput from "./TextInput";
-import SelectInput from "./SelectInput";
-import PhoneNumberInput from "./PhoneNumberInput";
+import TextInput from "../inputs/TextInput";
+import SelectInput from "../inputs/SelectInput";
+import PhoneNumberInput from "../inputs/PhoneNumberInput";
 
 export default function ContactPersonalDataFieldSet() {
     return (

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MainCalendarContext } from "../pages/Calendar";
+import { MainCalendarContext } from "../../pages/Calendar";
 import ModalForm from "./ModalForm";
 
 export default function ReminderModal() {

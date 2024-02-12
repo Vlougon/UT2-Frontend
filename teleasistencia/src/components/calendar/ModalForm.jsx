@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import { MainCalendarContext } from "../pages/Calendar";
-import { AuthContext } from "../contexts/AuthContext";
-import CheckboxInput from "./CheckboxInput";
+import { MainCalendarContext } from "../../pages/Calendar";
+import { AuthContext } from "../../contexts/AuthContext";
+import CheckboxInput from "../inputs/CheckboxInput";
 
 export default function ModalForm() {
     const [repeat, setRepeat] = useState([]);

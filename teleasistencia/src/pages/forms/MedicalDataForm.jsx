@@ -1,10 +1,10 @@
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import AllergiesIllnessesFieldSet from '../components/Allergies&IllnessesFieldSet';
-import MedicinesFieldSet from '../components/MedicinesFieldSet';
-import LocalStrucutresFieldSet from '../components/LocalStructures';
-import '../styles/MedicalDataForm.css';
+import AllergiesIllnessesFieldSet from '../../components/fieldsets/Allergies&IllnessesFieldSet';
+import MedicinesFieldSet from '../../components/fieldsets/MedicinesFieldSet';
+import LocalStrucutresFieldSet from '../../components/fieldsets/LocalStructures';
+import '../../styles/forms/MedicalDataForm.css';
 
 export default function MedicalDataForm() {
     const beneficiaryID = parseInt(useParams().userid);

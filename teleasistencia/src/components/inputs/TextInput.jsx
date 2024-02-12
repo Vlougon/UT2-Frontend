@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AuthContext } from "../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function TextInput({ nameID, sublimText, formUsed, boxLength, needFeedback = false }) {
     const { beneficiaryData } = useContext(AuthContext);

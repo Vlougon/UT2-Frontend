@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { AuthContext } from "../contexts/AuthContext";
-import TimeInput from "./TimeInput";
-import DateInput from "./DateInput";
+import { AuthContext } from "../../contexts/AuthContext";
+import TimeInput from "../inputs/TimeInput";
+import DateInput from "../inputs/DateInput";
 
 export default function TimeDataFieldSet() {
     const { callData } = useContext(AuthContext);

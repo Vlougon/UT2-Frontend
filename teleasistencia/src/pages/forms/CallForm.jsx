@@ -1,9 +1,9 @@
 import { useContext, useEffect, useRef } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
-import TimeDataFieldSet from '../components/TimeDataFieldSet';
-import CallDataFieldSet from '../components/CallDataFieldSet';
-import EmergencyFieldSet from '../components/EmergencyFieldSet';
-import '../styles/CallForm.css';
+import { AuthContext } from '../../contexts/AuthContext';
+import TimeDataFieldSet from '../../components/fieldsets/TimeDataFieldSet';
+import CallDataFieldSet from '../../components/fieldsets/CallDataFieldSet';
+import EmergencyFieldSet from '../../components/fieldsets/EmergencyFieldSet';
+import '../../styles/forms/CallForm.css';
 
 let callDuration = 0;
 
