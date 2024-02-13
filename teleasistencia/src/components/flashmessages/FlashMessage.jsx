@@ -1,6 +1,8 @@
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 import '../../styles/FlashMessage.css';
 
-export default function FlashMessage({ flashMessgae, flashType }) {
+export default function FlashMessage({ flashMessgae, flashType, closeHandler }) {
     const IconRender = () => {
         switch (flashType) {
             case 'danger':
@@ -39,7 +41,7 @@ export default function FlashMessage({ flashMessgae, flashType }) {
                     {flashMessgae}
                 </p>
             </div>
-            <button className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button className="btn-close" aria-label="Close" onClick={closeHandler}></button>
         </div>
     )
 }

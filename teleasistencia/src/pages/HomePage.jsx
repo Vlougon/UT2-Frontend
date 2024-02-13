@@ -2,12 +2,18 @@ import React, { useEffect, useState } from 'react';
 import BigShortCut from '../components/shortcuts/BigShortCut';
 import ShortCut from '../components/shortcuts/ShortCut';
 import ShortCutModal from '../components/shortcuts/ShortCutModal';
+import FlashMessage from '../components/flashmessages/FlashMessage'
 import '../styles/HomePage.css';
 
 export default function HomePage() {
     const [shortCuts, setShortCuts] = useState(() => {
         const storedShortCuts = localStorage.getItem('shortCuts');
         return storedShortCuts ? JSON.parse(storedShortCuts) : [];
+    });
+    const [showFM, setShowFM] = useState({
+        render: false,
+        message: '',
+        type: '',
     });
     let [shortCutsID, setShortCutsID] = useState(shortCuts.length > 0 ? Math.max(...shortCuts.map(shortcut => shortcut.id)) + 1 : 1);
 
@@ -19,6 +25,12 @@ export default function HomePage() {
         const target = element.target;
 
         if (shortCuts.length >= 7 || shortCuts.some(shortCut => shortCut.text === target.alt)) {
+            setShowFM({
+                ...showFM,
+                render: true,
+                message: '¡El Atajo ya está siendo usado!',
+                type: 'warning',
+            });
             return
         }
 
@@ -40,8 +52,20 @@ export default function HomePage() {
         setShortCuts(shortCuts.filter(shortcut => shortcut.id !== toDeleteID));
     };
 
+    const hiddeAlert = () => {
+        setShowFM({
+            ...showFM,
+            render: false,
+            message: '',
+            type: '',
+        });
+    };
+
     return (
         <div id='homePage' className="container-fluid">
+            {showFM.render &&
+                <FlashMessage flashMessgae={showFM.message} flashType={showFM.type} closeHandler={hiddeAlert} />
+            }
             <div className='row'>
                 <aside className="col-md-3 column">
                     <div className='row'>
