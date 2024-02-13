@@ -1,10 +1,15 @@
 #homePage .main {
-    min-height: calc(100vh - 92px - 150px);
+    min-height: calc(100vh - 77px - 113px);
 }
 
 #homePage aside.column {
     background-color: #575757;
     border-right: 3px solid black;
+}
+
+#homePage h3 {
+    padding: 10px 0;
+    border-bottom: 3px solid black;
 }
 
 #homePage aside.column .columrow {

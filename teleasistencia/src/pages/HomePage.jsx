@@ -44,6 +44,10 @@ export default function HomePage() {
         <div id='homePage' className="container-fluid">
             <div className='row'>
                 <aside className="col-md-3 column">
+                    <div className='row'>
+                        <h3 className='text-white'>Atajos</h3>
+                    </div>
+
                     <ul className='row'>
                         {
                             shortCuts.map((shortcut) => {
