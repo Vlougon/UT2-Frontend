@@ -1,7 +1,95 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import PathsList from '../classes/PathsList';
 import '../styles/HeadFoot.css';
 
 export default function HeadFoot() {
+    const location = useLocation();
+    const [paths, setPaths] = useState([{
+        id: 1,
+        href: '/',
+        name: 'Inicio'
+    }]);
+
+    useEffect(() => {
+        if (location.pathname === '/') {
+            setPaths([{
+                id: 1,
+                href: '/',
+                name: 'Inicio'
+            }]);
+
+        } else {
+            const currentPath = location.pathname.split('/')[1];
+            const posiblePaths = PathsList.paths.filter((path) => path.href.match(currentPath));
+            let currPathObject = '';
+
+            if (posiblePaths.length === 1) {
+
+                currPathObject = {
+                    id: posiblePaths[0].id,
+                    href: location.pathname,
+                    name: posiblePaths[0].name,
+                };
+
+            } else if (posiblePaths.length === 2) {
+
+                for (const path of posiblePaths) {
+
+                    if (path.href.split('/').length === location.pathname.split('/').length) {
+                        currPathObject = {
+                            id: path.id,
+                            href: location.pathname,
+                            name: path.name,
+                        };
+                    }
+                }
+
+            } else {
+                // Handle Error
+            }
+
+            if (currPathObject) {
+                /* 
+                If the path is already on the nav, we filter to keep all the paths previos to it (and itslef). 
+                Helpfull for when the users goes back to a previous view.
+
+                Other way around, must mean that is the first time for that user on that view.
+                We then store it's path and name.
+                */
+                if (paths.some((path) => path.id === currPathObject.id)) {
+                    const pathIndex = paths.findIndex((path) => path.id === currPathObject.id);
+
+                    setPaths(paths.filter((path, index) => index <= pathIndex));
+
+                } else {
+                    setPaths([
+                        ...paths,
+                        currPathObject
+                    ]);
+                }
+
+            } else {
+                // Handle Error
+            }
+        }
+
+    }, [location.pathname]);
+
+    const NavRender = () => {
+        const links = [];
+
+        for (const path of paths) {
+            links.push(
+                <Link key={path.id} className="nav-link" to={path.href}>{path.name}</Link>
+            );
+        }
+
+        return (
+            links.concat()
+        )
+    };
+
     return (
         <div>
             <header>
@@ -26,6 +114,10 @@ export default function HeadFoot() {
                     </div>
                 </nav>
             </header>
+
+            <nav className="nav nav-underline">
+                <NavRender />
+            </nav>
 
             <Outlet>
 

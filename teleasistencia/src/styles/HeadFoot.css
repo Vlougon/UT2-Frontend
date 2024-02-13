@@ -4,8 +4,27 @@ header {
     border-bottom: 4px solid #000e8d;
 }
 
-nav a {
+nav.navbar a {
     color: white !important;
+}
+
+nav.nav {
+    display: block;
+    background-color: #e1e1e1;
+    border-bottom: 2px solid black;
+    text-align: start;
+    overflow: auto;
+    text-wrap: nowrap;
+}
+
+nav.nav a {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px !important;
+    padding-right: 5px !important;
+    border-right: 1px dashed blue !important;
+    text-overflow: ellipsis;
+    white-space-collapse: collapse;
 }
 
 nav a img {

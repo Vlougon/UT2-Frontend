@@ -6,7 +6,7 @@ Add Rol Restrictions.
 Improve Data Types.
 
 /* ---- FRONT ---- */
-Add Flash Messages.
+Fix Lists Bad Edit Path.
 Reorganize the Code.
 Add PDF Generator and Visualizator to the 'DocumentGenerator' view (Finish Document Generaotr View).
 Finish Call Form.
@@ -14,8 +14,6 @@ Finish Assitant Form.
 Record Fake Call's Audio.
 Render based on User Role.
 Add the 'Delete' functionality to the lists.
-Improve Layout (Add NavBar).
-Improve Home View.
 
 /* ---- EXTRA ---- */
 Send Emails when calendar reminder is near.
