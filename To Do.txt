@@ -11,7 +11,14 @@ Record Fake Call's Audio.
 Render based on User Role.
 Add the 'Delete' functionality to the lists.
 
+/* ---- TRUE FRONT ---- */
+Add Logout Function to the Layout.
+Rework Login View.
+Rework Forgot Password View.
+Add Full Conectivity with Back.
+
+
 /* ---- EXTRA ---- */
 Send Emails when calendar reminder is near.
-Imporve Duration Render.
+Improve Duration Render.
 Improve Blank Lists Render.
