@@ -95,7 +95,7 @@ export default function HeadFoot() {
             <header>
                 <nav className="navbar navbar-expand-md">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="../images/logoMajada.png">
+                        <a className="navbar-brand" href="../images/logoMajada.png" target='_blank'>
                             <img src="../images/logoMajada.png" alt="Logo del Majada Marcial" />
                             Majada's Call Center
                         </a>

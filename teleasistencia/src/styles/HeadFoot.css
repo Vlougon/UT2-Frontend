@@ -6,6 +6,9 @@ header {
 
 nav.navbar a {
     color: white !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 nav.nav {
