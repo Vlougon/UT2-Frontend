@@ -1,13 +1,13 @@
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import { FormContext } from "../../contexts/FormContext";
 
 export default function TextInput({ nameID, sublimText, formUsed, boxLength, needFeedback = false }) {
-    const { beneficiaryData } = useContext(AuthContext);
-    const { addressData } = useContext(AuthContext);
-    const { contactData } = useContext(AuthContext);
-    const { handlePersonalDataChange } = useContext(AuthContext);
-    const { handleAddressChange } = useContext(AuthContext);
-    const { handleContactChange } = useContext(AuthContext);
+    const { beneficiaryData } = useContext(FormContext);
+    const { addressData } = useContext(FormContext);
+    const { contactData } = useContext(FormContext);
+    const { handlePersonalDataChange } = useContext(FormContext);
+    const { handleAddressChange } = useContext(FormContext);
+    const { handleContactChange } = useContext(FormContext);
 
     const handleTextInput = (element) => {
         if (!needFeedback) {

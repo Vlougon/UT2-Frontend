@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import { FormContext } from "../../contexts/FormContext";
 
 export default function DateInput({ dateValueID, dateText, formUsed, boxLength, disabledDate = false }) {
-    const { callData } = useContext(AuthContext);
-    const { handleCallChange } = useContext(AuthContext);
+    const { callData } = useContext(FormContext);
+    const { handleCallChange } = useContext(FormContext);
 
     const handleOnChangeValue = (operation) => {
         let valueToDisplay = '';

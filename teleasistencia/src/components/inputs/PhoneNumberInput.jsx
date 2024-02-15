@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { AuthContext } from "../../contexts/AuthContext";
+import { FormContext } from "../../contexts/FormContext";
 
 export default function PhoneNumberInput({ boxLength }) {
-    const { phones } = useContext(AuthContext);
-    const { handlePhonesChange } = useContext(AuthContext);
+    const { phones } = useContext(FormContext);
+    const { handlePhonesChange } = useContext(FormContext);
 
     const handlePhoneInput = (element) => {
         element.target.className = 'form-control';

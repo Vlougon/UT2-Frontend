@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import { AuthContext } from "../../contexts/AuthContext";
+import { FormContext } from "../../contexts/FormContext";
 
 export default function EmergencyFieldSet() {
-    const { callData } = useContext(AuthContext);
-    const { handleCallChange } = useContext(AuthContext);
+    const { callData } = useContext(FormContext);
+    const { handleCallChange } = useContext(FormContext);
 
     return (
         <fieldset>

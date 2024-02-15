@@ -1,13 +1,13 @@
 import { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
+import { FormContext } from '../../contexts/FormContext';
 import PhoneNumberInput from '../inputs/PhoneNumberInput';
 import TextInput from '../inputs/TextInput';
 import DNIGenerator from '../../classes/DNIGenerator';
 import SSNGenerator from '../../classes/SSNGenerator';
 
 export default function BeneficiaryPersonalDataFieldSet() {
-    const { beneficiaryData } = useContext(AuthContext);
-    const { handlePersonalDataChange } = useContext(AuthContext);
+    const { beneficiaryData } = useContext(FormContext);
+    const { handlePersonalDataChange } = useContext(FormContext);
 
     const dniGenerator = (element) => {
         handleTriggerInput(element.target.previousElementSibling, DNIGenerator.generateDNI());

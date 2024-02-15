@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { MainCalendarContext } from "../../pages/Calendar";
-import { AuthContext } from "../../contexts/AuthContext";
+import { FormContext } from "../../contexts/FormContext";
 import CheckboxInput from "../inputs/CheckboxInput";
 
 export default function ModalForm() {
@@ -9,7 +9,7 @@ export default function ModalForm() {
     const { events, setEvents } = useContext(MainCalendarContext);
     const { title, setTitle } = useContext(MainCalendarContext);
     const { selectedDates } = useContext(MainCalendarContext);
-    const { handleReminderDataChange } = useContext(AuthContext);
+    const { handleReminderDataChange } = useContext(FormContext);
 
     const handleTitleChange = (element) => {
         setTitle(element.target.value);

@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
+// import { useContext } from 'react';
+// import { FormContext } from '../../contexts/FormContext';
 import '../../styles/FlashMessage.css';
 
 export default function FlashMessage({ flashMessgae, flashType, closeHandler }) {

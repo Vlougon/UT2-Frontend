@@ -1,15 +1,15 @@
 // import { useParams, Link } from 'react-router-dom';
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import { FormContext } from "../../contexts/FormContext";
 import ContactPersonalDataFieldSet from "../../components/fieldsets/ContactPersonalDataFieldSet";
 import AddresFieldSet from "../../components/fieldsets/AddresFieldSet";
 import PCGenerator from "../../classes/PCGenerator";
 import '../../styles/forms/ContactForm.css';
 
 export default function ContactForm() {
-    const { contactData } = useContext(AuthContext);
-    const { addressData } = useContext(AuthContext);
-    const { phones } = useContext(AuthContext);
+    const { contactData } = useContext(FormContext);
+    const { addressData } = useContext(FormContext);
+    const { phones } = useContext(FormContext);
 
     const handleSubmit = (element) => {
         element.preventDefault();

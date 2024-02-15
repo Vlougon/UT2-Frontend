@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
+import { FormContext } from '../../contexts/FormContext';
 import TimeDataFieldSet from '../../components/fieldsets/TimeDataFieldSet';
 import CallDataFieldSet from '../../components/fieldsets/CallDataFieldSet';
 import EmergencyFieldSet from '../../components/fieldsets/EmergencyFieldSet';
@@ -10,7 +10,7 @@ let callDuration = 0;
 const callKind = JSON.parse(localStorage.getItem('callData')) ? 'A' : 'B';
 
 export default function CallForm() {
-    const { callData, setCallData } = useContext(AuthContext);
+    const { callData, setCallData } = useContext(FormContext);
     const durationRef = useRef();
     const turn = callData.time >= '06:00' && callData.time <= '13:59' ? 'morning' :
         callData.time >= '14:00' && callData.time <= '21:59' ? 'afternoon' : 'night';

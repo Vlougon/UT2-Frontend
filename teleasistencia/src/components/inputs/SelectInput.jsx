@@ -1,16 +1,16 @@
 import { useContext, useState } from "react";
-import { AuthContext } from '../../contexts/AuthContext';
+import { FormContext } from '../../contexts/FormContext';
 
 export default function SelectInput({ selectNameID, selectLabel, selectValues, formUsed, boxLength, needFeedBack = false }) {
     const [options] = useState([{ value: '', text: selectLabel }]);
-    const { beneficiaryData } = useContext(AuthContext);
-    const { addressData } = useContext(AuthContext);
-    const { contactData } = useContext(AuthContext);
-    const { callData } = useContext(AuthContext);
-    const { handlePersonalDataChange } = useContext(AuthContext);
-    const { handleAddressChange } = useContext(AuthContext);
-    const { handleContactChange } = useContext(AuthContext);
-    const { handleCallChange } = useContext(AuthContext);
+    const { beneficiaryData } = useContext(FormContext);
+    const { addressData } = useContext(FormContext);
+    const { contactData } = useContext(FormContext);
+    const { callData } = useContext(FormContext);
+    const { handlePersonalDataChange } = useContext(FormContext);
+    const { handleAddressChange } = useContext(FormContext);
+    const { handleContactChange } = useContext(FormContext);
+    const { handleCallChange } = useContext(FormContext);
 
     const handleSelectInput = (element) => {
         if (!needFeedBack) {

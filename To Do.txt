@@ -1,9 +1,5 @@
 /* ---- BACK ---- */
-Add 'call_kind' to the Back (Call).
-Add 'repeat' and 'backgroundColor' to the Back (Reminder).
-Remove 'terminated' to the Back (Reminder).
 Add Rol Restrictions.
-Improve Data Types.
 
 /* ---- FRONT ---- */
 Fix Lists Bad Edit Path.

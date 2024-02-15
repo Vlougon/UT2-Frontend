@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import { FormContext } from "../../contexts/FormContext";
 import TimeInput from "../inputs/TimeInput";
 import DateInput from "../inputs/DateInput";
 
 export default function TimeDataFieldSet() {
-    const { callData } = useContext(AuthContext);
-    const { handleCallChange } = useContext(AuthContext);
+    const { callData } = useContext(FormContext);
+    const { handleCallChange } = useContext(FormContext);
 
     const handleInput = (element) => {
         element.target.className = 'form-control';

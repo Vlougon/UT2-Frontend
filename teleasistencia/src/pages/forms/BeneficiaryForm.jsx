@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
+import { FormContext } from '../../contexts/FormContext';
 import BeneficiaryPersonalDataFieldSet from '../../components/fieldsets/BeneficiaryPersonalDataFieldSet';
 import SocialDataFieldSet from '../../components/fieldsets/SocialDataFieldSet';
 import AddresFieldSet from '../../components/fieldsets/AddresFieldSet';
@@ -8,9 +8,9 @@ import PCGenerator from '../../classes/PCGenerator';
 import '../../styles/forms/BeneficiaryForm.css';
 
 export default function BeneficiaryForm() {
-    const { beneficiaryData } = useContext(AuthContext);
-    const { addressData } = useContext(AuthContext);
-    const { phones } = useContext(AuthContext);
+    const { beneficiaryData } = useContext(FormContext);
+    const { addressData } = useContext(FormContext);
+    const { phones } = useContext(FormContext);
 
     const handleSubmit = (element) => {
         element.preventDefault();

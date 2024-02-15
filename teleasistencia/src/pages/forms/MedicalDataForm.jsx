@@ -1,6 +1,6 @@
-import { AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { FormContext } from '../../contexts/FormContext';
 import AllergiesIllnessesFieldSet from '../../components/fieldsets/Allergies&IllnessesFieldSet';
 import MedicinesFieldSet from '../../components/fieldsets/MedicinesFieldSet';
 import LocalStrucutresFieldSet from '../../components/fieldsets/LocalStructures';
@@ -8,7 +8,7 @@ import '../../styles/forms/MedicalDataForm.css';
 
 export default function MedicalDataForm() {
     const beneficiaryID = parseInt(useParams().userid);
-    const { medicalFormValues, setMedicalFormValues } = useContext(AuthContext);
+    const { medicalFormValues, setMedicalFormValues } = useContext(FormContext);
 
     const handleChange = (element) => {
         setMedicalFormValues({

@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { AuthContext } from '../../contexts/AuthContext';
+import { FormContext } from '../../contexts/FormContext';
 import TextInput from "../inputs/TextInput";
 import SelectInput from "../inputs/SelectInput";
 import PCGenerator from "../../classes/PCGenerator";
 
 export default function AddresFieldSet() {
-    const { addressData } = useContext(AuthContext);
-    const { handleAddressChange } = useContext(AuthContext);
+    const { addressData } = useContext(FormContext);
+    const { handleAddressChange } = useContext(FormContext);
 
     const pcGenerator = (element) => {
         const selectedProvince = document.querySelector('#province').value;
