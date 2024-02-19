@@ -22,6 +22,7 @@ const MyDocument = () => (
         <Page size="A4" style={styles.page}>
             <View style={styles.section}>
                 <Text>Section #1</Text>
+                <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi magni excepturi doloremque debitis facilis reprehenderit impedit temporibus laborum deserunt magnam pariatur rem harum, corporis dicta nesciunt ducimus nobis veniam. Eaque.</Text>
             </View>
             <View style={styles.section}>
                 <Text>Section #2</Text>
