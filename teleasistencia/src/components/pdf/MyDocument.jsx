@@ -9,33 +9,63 @@ const styles = StyleSheet.create({
         padding: 20,
         fontSize: 12,
     },
+
+    center: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        width: '100vw',
+    },
+    text: {
+        textAlign: 'center',
+        fontSize: 20,
+        color: '#333333',
+    },
+
     section: {
+        display: 'flex',
+        flexGrow: 1,
+        flexDirection: 'column', // Cambia la dirección del flujo a column
         margin: 10,
         padding: 10,
-        flexGrow: 1,
+        backgroundColor: '#2121eb',
         border: '1px solid #CCCCCC',
         borderRadius: 8,
-        textAlign: 'center',
     },
     label: {
         fontWeight: 'bold',
-        marginBottom: 5,
+        margin: 10,
+        color: '#FFFFFF'
+        
     },
     input: {
-        marginBottom: 10,
-        padding: 8,
+        margin: 10,
         border: '1px solid #B0B0B0',
         borderRadius: 4,
-        width: '100%', // Ajusta el ancho según tus necesidades
-        margin: '0 auto', // Centra el elemento
+        width: '200px',
+        textAlign: 'center',
+        padding: '10px',
+        color: '#FFFFFF'
     },
-    select: {
-        marginBottom: 10,
-        padding: 8,
-        border: '1px solid #B0B0B0',
+
+    buttonContainer: {
+        color: '#2121eb',
+        textAlign: 'center',
+        marginTop: 20, // Ajusta el margen superior según tus necesidades
+        width: '100px',
+
+    },
+    button: {
+        backgroundColor: '#2121eb',
+        color: '#FFFFFF',
+        padding: '10px',
+        margin: '5px',
+        border: 'none',
         borderRadius: 4,
-        width: '100%', // Ajusta el ancho según tus necesidades
-        margin: '0 auto', // Centra el elemento
+        cursor: 'pointer',
+        width: '60px',
+        textAlign:'justify'
     },
     pageNumber: {
         position: 'absolute',
@@ -49,40 +79,39 @@ const styles = StyleSheet.create({
 const MyDocument = () => (
     <Document>
         <Page size="A4" style={styles.page}>
-            <View style={styles.section}>
-                <Text style={styles.label}>Nombre Completo:</Text>
-                {/* Render your input field for Full Name here */}
-                <Text style={styles.input}>John Doe</Text>
+            <View style={styles.center}>
+                <View style={styles.section}>
+                    <Text style={styles.label}>Nombre Completo:</Text>
+                    <Text style={styles.input}>John Doe</Text>
+                </View>
+                <View style={styles.section}>
+                    <Text style={styles.label}>Email:</Text>
+                    <Text style={styles.input}>john.doe@example.com</Text>
+                </View>
+
+                <View style={styles.section}>
+                    <Text style={styles.label}>Rol:</Text>
+                    <Text style={styles.input}>Asistente</Text>
+                </View>
+                <View style={styles.section}>
+                    <Text style={styles.label}>Contraseña:</Text>
+                    <Text style={styles.input}>********</Text>
+                </View>
+                <View style={styles.section}>
+                    <Text style={styles.label}>Confirmar Contraseña:</Text>
+                    <Text style={styles.input}>********</Text>
+                </View>
+                <View style={styles.section}>
+                    <Text style={styles.label}>Número de Teléfono:</Text>
+                    <Text style={styles.input}>123-456-7890</Text>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <Text style={styles.button}>Guardar</Text>
+                </View>
+                <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
+                    `${pageNumber} / ${totalPages}`
+                )} />
             </View>
-            <View style={styles.section}>
-                <Text style={styles.label}>Email:</Text>
-                {/* Render your input field for Email here */}
-                <Text style={styles.input}>john.doe@example.com</Text>
-            </View>
-            <View style={styles.section}>
-                <Text style={styles.label}>Rol:</Text>
-                {/* Render your select field for Role here */}
-                <Text style={styles.select}>Asistente</Text>
-            </View>
-            <View style={styles.section}>
-                <Text style={styles.label}>Contraseña:</Text>
-                {/* Render your input field for Password here */}
-                <Text style={styles.input}>********</Text>
-            </View>
-            <View style={styles.section}>
-                <Text style={styles.label}>Confirmar Contraseña:</Text>
-                {/* Render your input field for Confirm Password here */}
-                <Text style={styles.input}>********</Text>
-            </View>
-            <View style={styles.section}>
-                <Text style={styles.label}>Número de Teléfono:</Text>
-                {/* Render your input field for Phone Number here */}
-                <Text style={styles.input}>123-456-7890</Text>
-            </View>
-            {/* Additional sections for other fields can be added here */}
-            <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
-                `${pageNumber} / ${totalPages}`
-            )} />
         </Page>
     </Document>
 );
