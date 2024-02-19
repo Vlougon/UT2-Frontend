@@ -1,6 +1,6 @@
 import '../styles/DocumentGenerator.css';
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import  MyDocument  from './../components/pdf/MyDocument';
+import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
+import MyDocument from './../components/pdf/MyDocument';
 
 
 export default function DocumentGenerator() {
@@ -20,15 +20,19 @@ export default function DocumentGenerator() {
                     <option value="outcomingcallslist">Listado de Llamadas de Salida</option>
                 </select>
 
-                {/* Enlace para descargar el PDF */}
-                <PDFDownloadLink document={<MyDocument />} fileName="listadoUsers.pdf">
-                    {
-                        ({ loading  }) =>
-                        loading ? <button>Loading document...</button> : <button>Download now!</button>
-                    }
-                </PDFDownloadLink>
 
-                
+                {/* Mostrar el documento */}
+                <PDFViewer style={{ width: '100%', height: '90vh', border: '5px solid black', borderRadius: '10px', marginTop: '20px' }}>
+                    <MyDocument />
+                </PDFViewer>
+
+                    {/* Enlace para descargar el PDF */}
+                    <PDFDownloadLink document={<MyDocument />} fileName="listadoUsers.pdf" >
+                        {
+                            ({ loading }) =>
+                                loading ? <button id='downloadButton' className='d-flex justify-content-center btn btn-primary' >Loading document...</button> : <button id='downloadButton'className=' d-flex justify-content-center btn btn-primary'>Download now!</button>
+                        }
+                    </PDFDownloadLink>
             </div>
         </div>
     )
